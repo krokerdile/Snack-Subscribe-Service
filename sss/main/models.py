@@ -7,8 +7,8 @@ class Snack(models.Model):
     describe=models.CharField(max_length=500)
     summary =models.CharField(max_length=300)
 
-    image=models.ImageField(upload_to='images/', null=True)
-
+    # image=models.ImageField(upload_to='images/', null=True)
+    image=models.CharField(max_length=500)
     with_who =models.CharField(max_length=20)
     texture =models.CharField(max_length=20)
     flavor =models.CharField(max_length=20)
