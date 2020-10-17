@@ -18,3 +18,18 @@
     font-weight: 300;
     font-style: normal;
 }
+
+@font-face {
+    font-family: 'SDGothic_EB';
+    src: url('../fonts/SDGothic/AppleSDGothicNeo-ExtraBold.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Noto_B';
+    src: url('../fonts/NotoSansCJKkr-Bold.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
