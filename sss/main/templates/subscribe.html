@@ -4,10 +4,52 @@
 {% endblock %}
 
 {% block content %}
-<div class= "wrap">
-<section>
+<style>
+  .bottomspace{
+    margin-top: 4rem;
+    margin-bottom: 3rem;
+  }
+
+  .selectpack {
+    position: absolute;
+    display: flex;
+    flex-direction: horizontal;
+    width: 330px;
+    height: 309px;
+    top: 50px;
+    padding-left: 14rem;
+  }
+
+  .buttonspace {
+    position: absolute;
+    top: 380px;
+    padding-left: 30rem;
+  }
+
+  .dividespace {
+    position: absolute;
+    width: 1000px;
+    height: 309px;
+    top: 400px;
+    padding-left: 30rem;
+  }
+
+  .wrapper {
+    max-height: 70%;
+  }
+
+  #img1 {
+    margin-right: 2rem;
+  }
+
+  #img2 {
+    margin-left: 2rem;
+  }
+</style>
+<div class="wrap">
+  <section>
     <div class="container">
-      <div class="row align-items-center">
+      <!-- <div class="row align-items-center">
         <div class="col-lg-6 order-lg-2">
           <div class="p-5">
             <img class="img-fluid rounded-circle" src="img/01.jpg" alt="">
@@ -15,14 +57,36 @@
         </div>
         <div class="col-lg-6 order-lg-1">
           <div class="p-5">
-            <h2 class="display-4">For those about to rock...</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod aliquid, mollitia odio veniam sit iste esse assumenda amet aperiam exercitationem, ea animi blanditiis recusandae! Ratione voluptatum molestiae adipisci, beatae obcaecati.</p>
+            <h2 class="display-4">For Subscribe...</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod aliquid, mollitia odio veniam sit iste
+              esse assumenda amet aperiam exercitationem, ea animi blanditiis recusandae! Ratione voluptatum molestiae
+              adipisci, beatae obcaecati.</p>
           </div>
         </div>
-      </div>
-    </div>
-</section>
+      </div> -->
+      <div class="container">
+        <div class="selectpack">
+          <img src="{% static 'main/img/maniapack.png' %}" alt="" style="width: 330px; height: 309px; z-index: 3; "
+            id="img1">
+          <img src="{% static 'main/img/sopack.png' %}" alt="" style="width: 330px; height: 309px; z-index: 3; "
+            id="img2">
 
-<img class="test" src="{% static 'main/image/subscribe_detail.svg' %}" alt="">
+        </div>
+        <div class="buttonspace">
+          <a href="{% url 'subscribe' %}" class="btn btn-danger">구독하기</a>
+        </div>
+      </div>
+
+  </section>
+  <div class="wrapper">
+    <div class="dividespace">
+      <img class="test" src="{% static 'main/image/subscribe_detail.svg' %}" alt=""
+        style="width: 700px; height: 500px; z-index: 3; ">
+    </div>
+  </div>
 </div>
+<div class="bottomspace">
+  
+</div>
+
 {% endblock %}
