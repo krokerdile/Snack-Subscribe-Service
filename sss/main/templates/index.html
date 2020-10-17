@@ -6,24 +6,11 @@
 {% endblock %}
 
 {% block content %}
-<header class="masthead text-center text-white">
-  <div class="masthead-content">
-    <div class="container">
-      <h1 class="masthead-heading mb-0">One Page Wonder</h1>
-      <h2 class="masthead-subheading mb-0">Will Rock Your Socks Off</h2>
-      <a href="#" class="btn btn-primary btn-xl rounded-pill mt-5">Learn More</a>
-    </div>
-  </div>
-  <div class="bg-circle-1 bg-circle"></div>
-  <div class="bg-circle-2 bg-circle"></div>
-  <div class="bg-circle-3 bg-circle"></div>
-  <div class="bg-circle-4 bg-circle"></div>
-</header>
 
 <header>
     <div class="overlay"></div>
     <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
-      <source src="{{ MEDIA_URL }}lotte.mp4" type="video/mp4">
+      <source src="{% static 'main/lotte.mp4' %}" type="video/mp4">
     </video>
     <div class="container h-100">
       <div class="d-flex h-100 text-center align-items-center">
@@ -34,7 +21,7 @@
       </div>
     </div>
   </header>
-  
+
   <section class="my-5">
     <div class="container">
       <div class="row">
@@ -49,6 +36,23 @@
       </div>
     </div>
   </section>
+
+  
+  
+<header class="masthead text-center text-white">
+    <div class="masthead-content">
+      <div class="container">
+        <h1 class="masthead-heading mb-0">One Page Wonder</h1>
+        <h2 class="masthead-subheading mb-0">Will Rock Your Socks Off</h2>
+        <a href="#" class="btn btn-primary btn-xl rounded-pill mt-5">Learn More</a>
+      </div>
+    </div>
+    <div class="bg-circle-1 bg-circle"></div>
+    <div class="bg-circle-2 bg-circle"></div>
+    <div class="bg-circle-3 bg-circle"></div>
+    <div class="bg-circle-4 bg-circle"></div>
+  </header>
+    
 
 <section>
   <div class="container">
