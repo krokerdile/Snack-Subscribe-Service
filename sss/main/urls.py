@@ -4,7 +4,7 @@ import main.views
 
 urlpatterns = [
     path('',main.views.home, name='home'),
-    path('recommend',main.views.recommend, name='recommend'),
-    path('subscribe',main.views.subscribe, name='subscribe'),
-    path('shopping',main.views.shopping, name='shopping'),
+    path('recommend/',main.views.recommend, name='recommend'),
+    path('subscribe/',main.views.subscribe, name='subscribe'),
+    path('shopping/',main.views.shopping, name='shopping'),
 ]
