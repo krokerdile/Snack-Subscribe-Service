@@ -1,26 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'base.html' %}
+{% block content %}
+{% if user.is_authenticated %}
+{{user.get_username}}
+<a href="{% url 'logout' %}" type="submit">Logout</a>
+{% else %}
+<a href="{% url 'signup' %}"  type="submit">SignUp</a>
+<a href="{% url 'login' %}"  type="submit">Login</a>
+{% endif %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
 
-<body>
-    {% if user.is_authenticated %}
-    {{user.get_username}}
-    <a href="{% url 'logout' %}" type="submit">Logout</a>
-    {% else %}
-    <a href="{% url 'signup' %}"  type="submit">SignUp</a>
-    <a href="{% url 'login' %}"  type="submit">Login</a>
-    {% endif %}
-
-    
-    <br><a href ="{% url 'recommend' %}"  type="submit">recommend</a>
-    <br><a href ="{% url 'subscribe' %}"  type="submit">subscribe</a>
-    <br><a href ="{% url 'shopping' %}"  type="submit">shopping</a>
-    <br>
-</body>
-
-</html>
+<br><a href ="{% url 'recommend' %}"  type="submit">recommend</a>
+<br><a href ="{% url 'subscribe' %}"  type="submit">subscribe</a>
+<br><a href ="{% url 'shopping' %}"  type="submit">shopping</a>
+<br>
+{% endblock %}
