@@ -3,7 +3,6 @@
 {% block head %}
 
 <style>
-
   .quiz {
     font-family: 'Roboto';
     font-style: Regular;
@@ -14,8 +13,8 @@
 
   .quiz h1 {
     font-family: 'Roboto';
-    font-weight:bold; 
-    font-size:40px;
+    font-weight: bold;
+    font-size: 40px;
     margin-bottom: 4rem;
   }
 
@@ -58,6 +57,7 @@
   #circle1 {
     background-color: #E4F2FF;
   }
+  
 
   #circle2 {
     background-color: rgba(249, 174, 29, 0.83);
@@ -87,7 +87,7 @@
     background-color: #FFCAE3;
   }
 
-  .image{
+  .image {
     display: inline;
     margin: 3rem;
   }
@@ -106,39 +106,37 @@
     <div class="quiz">
       <h1>롯데과자 추천 서비스 Quiz</h1>
     </div>
-  
     <div class="question">
       <h1>1. 누구와 함께 먹을건가요?</h1>
-  
       <div class="image">
-        <img src="{% static 'main/image/family.png' %}">
+        <img onclick="clickimage1()" id="family" src="{% static 'main/image/family.png' %} ">
       </div>
-  
       <div class="image">
-        <img src="{% static 'main/image/woman.png' %}">
+        <img onclick="clickimage2()" id="woman" src="{% static 'main/image/woman.png' %}">
       </div>
-  
       <div class="image">
-        <img src="{% static 'main/image/friend.png' %}">
+        <img onclick="clickimage3()" id="friend" src="{% static 'main/image/friend.png' %}">
       </div>
       <hr>
     </div>
-  
+
+
     <div class="question">
       <h1>2. 어떤 식감을 좋아하나요?</h1>
-      <div class="items-container" style=" displaly:flex; flex-wrap:no-wrap; flex-direction: row; width: 100%; min-width: 500px; ">
+      <div class="items-container"
+        style=" displaly:flex; flex-wrap:no-wrap; flex-direction: row; width: 100%; min-width: 500px; ">
         <div class="row" style="justify-content: center;">
           <div class=items style="text-align: center; margin-top:1rem;">
-            <div class="circle" id="circle1">
+            <div class="circle" id="circle1" onclick="clickcircle1()">
               폭신폭신
             </div>
-            <div class="circle" id="circle2">
+            <div class="circle" id="circle2" onclick="clickcircle2()">
               바삭바삭
             </div>
-            <div class="circle" id="circle3">
+            <div class="circle" id="circle3" onclick="clickcircle3()">
               쫀득쫀득
             </div>
-            <div class="circle" id="circle4">
+            <div class="circle" id="circle4" onclick="clickcircle4()">
               와작와작
             </div>
           </div>
@@ -146,23 +144,23 @@
       </div>
       <hr>
     </div>
-  
-  
+
     <div class="question">
       <h1>3. 무슨 맛을 느끼고 싶으신가요?</h1>
-      <div class="items-container" style=" displaly:flex; flex-wrap:no-wrap; flex-direction: row; width: 100%; min-width: 500px; ">
+      <div class="items-container"
+        style=" displaly:flex; flex-wrap:no-wrap; flex-direction: row; width: 100%; min-width: 500px; ">
         <div class="row" style="justify-content: center;">
           <div class=items style="text-align: center; margin-top:1rem;">
-            <div class="circle" id="circle5">
+            <div class="circle" id="circle5" onclick="clickcircle5()">
               달콤한
             </div>
-            <div class="circle" id="circle6">
+            <div class="circle" id="circle6" onclick="clickcircle6()">
               매콤한
             </div>
-            <div class="circle" id="circle7">
+            <div class="circle" id="circle7" onclick="clickcircle7()">
               짭짤한
             </div>
-            <div class="circle" id="circle8">
+            <div class="circle" id="circle8" onclick="clickcircle8()">
               고소한
             </div>
           </div>
@@ -170,44 +168,44 @@
       </div>
       <hr>
     </div>
-  
+
     <div class="question">
       <h1>4. 밥 먹을 때 어떻게 먹나요?
         같이 나눠먹기 / 따로 각자 접시에
       </h1>
-  
-      <div class="items-container" style=" displaly:flex; flex-wrap:no-wrap; flex-direction: row; width: 100%; min-width: 500px; ">
+      <div class="items-container"
+        style=" displaly:flex; flex-wrap:no-wrap; flex-direction: row; width: 100%; min-width: 500px; ">
         <div class="row" style="justify-content: center;">
           <div class=items style="text-align: center; margin-top:1rem;">
             <div class="image">
-              <img src="{% static 'main/image/meal_plate.png' %}">
+              <img onclick="clickimage4()" id="meal_plate" src="{% static 'main/image/meal_plate.png' %}">
             </div>
             <div class="image">
-              <img src="{% static 'main/image/meal_plate_2.png' %}">
+              <img onclick="clickimage5()" id="meal_plate_2" src="{% static 'main/image/meal_plate_2.png' %}">
             </div>
           </div>
         </div>
       </div>
       <hr>
     </div>
-  
+
     <div class="question">
       <h1>5. 언제 먹을건가요?</h1>
-  
-      <div class="items-container" style=" displaly:flex; flex-wrap:no-wrap; flex-direction: row; width: 100%; min-width: 500px; ">
+      <div class="items-container"
+        style=" displaly:flex; flex-wrap:no-wrap; flex-direction: row; width: 100%; min-width: 500px; ">
         <div class="row" style="justify-content: center;">
           <div class=items style="text-align: center; margin-top:1rem;">
             <div class="image">
-            <img src="{% static 'main/image/snack.png' %}">
+              <img onclick="clickimage6()" id="snack" src="{% static 'main/image/snack.png' %}">
             </div>
             <div class="image">
-              <img src="{% static 'main/image/bagel.png' %}">
+              <img onclick="clickimage7()" id="bagel" src="{% static 'main/image/bagel.png' %}">
             </div>
             <div class="image">
-              <img src="{% static 'main/image/beer.png' %}">
+              <img onclick="clickimage8()" id="beer" src="{% static 'main/image/beer.png' %}">
             </div>
             <div class="image">
-              <img src="{% static 'main/image/mouth.png' %}">
+              <img onclick="clickimage9()" id="mouth" src="{% static 'main/image/mouth.png' %}">
             </div>
           </div>
         </div>
@@ -217,4 +215,136 @@
   </div>
 </div>
 
+
+<!-- javascript function imageclick시 흑백으로 바뀜 (나중에 value넘겨주는것도 추가하면될듯 )-->
+<script>
+  function clickimage1() {
+    document.getElementById("family").src = "{% static 'main/image/familyBK.png' %}";
+    document.getElementById("woman").src = "{% static 'main/image/woman.png' %}";
+    document.getElementById("friend").src = "{% static 'main/image/friend.png' %}";
+  }
+</script>
+<script>
+  function clickimage2() {
+    document.getElementById("family").src = "{% static 'main/image/family.png' %}";
+    document.getElementById("woman").src = "{% static 'main/image/womanBK.png' %}";
+    document.getElementById("friend").src = "{% static 'main/image/friend.png' %}";
+  }
+</script>
+<script>
+  function clickimage3() {
+    document.getElementById("family").src = "{% static 'main/image/family.png' %}";
+    document.getElementById("woman").src = "{% static 'main/image/woman.png' %}";
+    document.getElementById("friend").src = "{% static 'main/image/friendBK.png' %}";
+  }
+</script>
+<script>
+  function clickimage4() {
+    document.getElementById("meal_plate").src = "{% static 'main/image/meal_plateBK.png' %}";
+    document.getElementById("meal_plate_2").src = "{% static 'main/image/meal_plate_2.png' %}";
+  }
+</script>
+<script>
+  function clickimage5() {
+    document.getElementById("meal_plate").src = "{% static 'main/image/meal_plate.png' %}";
+    document.getElementById("meal_plate_2").src = "{% static 'main/image/meal_plate_2BK.png' %}";
+  }
+</script>
+<script>
+  function clickimage6() {
+    document.getElementById("snack").src = "{% static 'main/image/snackBK.png' %}";
+    document.getElementById("bagel").src = "{% static 'main/image/bagel.png' %}";
+    document.getElementById("beer").src = "{% static 'main/image/beer.png' %}";
+    document.getElementById("mouth").src = "{% static 'main/image/mouth.png' %}";
+  }
+</script>
+<script>
+  function clickimage7() {
+    document.getElementById("snack").src = "{% static 'main/image/snack.png' %}";
+    document.getElementById("bagel").src = "{% static 'main/image/bagelBK.png' %}";
+    document.getElementById("beer").src = "{% static 'main/image/beer.png' %}";
+    document.getElementById("mouth").src = "{% static 'main/image/mouth.png' %}";
+  }
+</script>
+<script>
+  function clickimage8() {
+    document.getElementById("snack").src = "{% static 'main/image/snack.png' %}";
+    document.getElementById("bagel").src = "{% static 'main/image/bagel.png' %}";
+    document.getElementById("beer").src = "{% static 'main/image/beerBK.png' %}";
+    document.getElementById("mouth").src = "{% static 'main/image/mouth.png' %}";
+  }
+</script>
+<script>
+  function clickimage9() {
+    document.getElementById("snack").src = "{% static 'main/image/snack.png' %}";
+    document.getElementById("bagel").src = "{% static 'main/image/bagel.png' %}";
+    document.getElementById("beer").src = "{% static 'main/image/beer.png' %}";
+    document.getElementById("mouth").src = "{% static 'main/image/mouthBK.png' %}";
+  }
+</script>
+<!-- 동그란 버튼 click시 css backgroundcolor바꿔줌 -->
+<script>
+  function clickcircle1() {
+    document.getElementById("circle1").style.backgroundColor="#C4C4C4";
+    document.getElementById("circle2").style.backgroundColor="F9AE1D";
+    document.getElementById("circle3").style.backgroundColor="#FFC5B8";
+    document.getElementById("circle4").style.backgroundColor="#61A2D1";
+  }
+</script>
+<script>
+  function clickcircle2() {
+    document.getElementById("circle1").style.backgroundColor="#E4F2FF";
+    document.getElementById("circle2").style.backgroundColor="#C4C4C4";
+    document.getElementById("circle3").style.backgroundColor="#FFC5B8";
+    document.getElementById("circle4").style.backgroundColor="#61A2D1";
+  }
+</script>
+<script>
+  function clickcircle3() {
+    document.getElementById("circle1").style.backgroundColor="#E4F2FF";
+    document.getElementById("circle2").style.backgroundColor="#F9AE1D";
+    document.getElementById("circle3").style.backgroundColor="#C4C4C4";
+    document.getElementById("circle4").style.backgroundColor="#61A2D1";
+  }
+</script>
+<script>
+  function clickcircle4() {
+    document.getElementById("circle1").style.backgroundColor="#E4F2FF";
+    document.getElementById("circle2").style.backgroundColor="F9AE1D";
+    document.getElementById("circle3").style.backgroundColor="#FFC5B8";
+    document.getElementById("circle4").style.backgroundColor="#C4C4C4";
+  }
+</script>
+<script>
+  function clickcircle5() {
+    document.getElementById("circle5").style.backgroundColor="#C4C4C4";
+    document.getElementById("circle6").style.backgroundColor= "#F56638";
+    document.getElementById("circle7").style.backgroundColor="#D4F5FD";
+    document.getElementById("circle8").style.backgroundColor="#FFCAE3";
+  }
+</script>
+<script>
+  function clickcircle6() {
+    document.getElementById("circle5").style.backgroundColor="#FFEDAC";
+    document.getElementById("circle6").style.backgroundColor= "#C4C4C4";
+    document.getElementById("circle7").style.backgroundColor="#D4F5FD";
+    document.getElementById("circle8").style.backgroundColor="#FFCAE3";
+  }
+</script>
+<script>
+  function clickcircle7() {
+    document.getElementById("circle5").style.backgroundColor="#FFEDAC";
+    document.getElementById("circle6").style.backgroundColor= "#F56638";
+    document.getElementById("circle7").style.backgroundColor="#C4C4C4";
+    document.getElementById("circle8").style.backgroundColor="#FFCAE3";
+  }
+</script>
+<script>
+  function clickcircle8() {
+    document.getElementById("circle5").style.backgroundColor="#FFEDAC";
+    document.getElementById("circle6").style.backgroundColor= "#F56638";
+    document.getElementById("circle7").style.backgroundColor="#D4F5FD";
+    document.getElementById("circle8").style.backgroundColor="#C4C4C4";
+  }
+</script>
 {% endblock %}
