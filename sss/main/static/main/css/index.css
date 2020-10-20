@@ -200,11 +200,14 @@ header {
     }
     
     #m-heading {
+      font-family: 'SDGothic' !important;
+      font-weight: bolder;
       font-size: 4.5rem !important;
       margin-bottom: 2% !important;
     }
     
     #m-subheading {
+      font-family: 'SDGothic' !important;
       font-size: 2.7em !important;
       font-weight: normal;
     }
