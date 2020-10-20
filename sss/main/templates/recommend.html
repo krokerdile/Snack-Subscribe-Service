@@ -220,22 +220,31 @@
 <script>
   function clickimage1() {
     document.getElementById("family").src = "{% static 'main/image/familyBK.png' %}";
+    document.getElementById("family").style.border= "1px solid #000000";
     document.getElementById("woman").src = "{% static 'main/image/woman.png' %}";
+    document.getElementById("woman").style.border= "0";
     document.getElementById("friend").src = "{% static 'main/image/friend.png' %}";
+    document.getElementById("friend").style.border= "0";
   }
 </script>
 <script>
   function clickimage2() {
     document.getElementById("family").src = "{% static 'main/image/family.png' %}";
+    document.getElementById("family").style.border= "0";
     document.getElementById("woman").src = "{% static 'main/image/womanBK.png' %}";
+    document.getElementById("woman").style.border= "1px solid #000000";
     document.getElementById("friend").src = "{% static 'main/image/friend.png' %}";
+    document.getElementById("friend").style.border= "0";
   }
 </script>
 <script>
   function clickimage3() {
     document.getElementById("family").src = "{% static 'main/image/family.png' %}";
+    document.getElementById("family").style.border= "0";
     document.getElementById("woman").src = "{% static 'main/image/woman.png' %}";
+    document.getElementById("woman").style.border= "0";
     document.getElementById("friend").src = "{% static 'main/image/friendBK.png' %}";
+    document.getElementById("friend").style.border= "1px solid #000000";
   }
 </script>
 <script>
