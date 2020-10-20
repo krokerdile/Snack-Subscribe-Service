@@ -15,3 +15,6 @@ def shopping(request):
 
 def payment(request):
     return render(request,'payment.html')
+
+def mypage(request):
+    return render(request,'mypage.html')
