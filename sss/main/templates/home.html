@@ -40,6 +40,13 @@
                 margin-left: 25px;
                 margin-right: 25px;
                 width: 20%;">과자추천</a>
+                <a href="{% url 'result' %}" class="btn btn-primary btn-xl mt-5"
+                style="background-color: transparent;
+                border-color: #ffffff;
+                border-width: 3px;
+                margin-left: 25px;
+                margin-right: 25px;
+                width: 20%;">결과페이지</a>
             </div>
         </div>
     </div>
@@ -95,13 +102,13 @@
           <p>지금 구독하고 롯데제과의 다양한 과자를 경험하세요.</p>
           <hr color="#877669" style="height: 10px;">
           <p>미공개 신상 과자 포함</p>
-          <button style="text-align: center;
+          <a href="{% url 'subscribe' %}"><button style="text-align: center;
           width: 120px;
           height: 45px; 
           background: #877669;
           border-radius: 8px;
           border-width: 0px;
-          color: white">구독하기</button>
+          color: white">구독하기</button></a>
 
         </div>
       </div>
