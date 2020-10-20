@@ -5,33 +5,22 @@
 
 {% block content %}
 <style>
-  .bottomspace {
-    margin-top: 40rem;
-    margin-bottom: 40rem;
-  }
-
+  
   .selectpack {
-    position: absolute;
     display: flex;
-    flex-direction: horizontal;
+    justify-content: center;
     top: 120px;
-    padding-left: 10rem;
   }
 
   .buttonspace {
-    position: absolute;
     top: 530px;
-    padding-left: 30rem;
+    display: flex;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    justify-content: center;
   }
 
-  .dividespace {
-    position: absolute;
-    width: 1000px;
-    height: 309px;
-    top: 600px;
-    /* padding-left: 7rem; */
-  }
-
+  
   .wrapper {
     max-height: 70%;
   }
@@ -47,21 +36,6 @@
 <div class="wrap">
   <section>
     <div class="container">
-      <!-- <div class="row align-items-center">
-        <div class="col-lg-6 order-lg-2">
-          <div class="p-5">
-            <img class="img-fluid rounded-circle" src="img/01.jpg" alt="">
-          </div>
-        </div>
-        <div class="col-lg-6 order-lg-1">
-          <div class="p-5">
-            <h2 class="display-4">For Subscribe...</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod aliquid, mollitia odio veniam sit iste
-              esse assumenda amet aperiam exercitationem, ea animi blanditiis recusandae! Ratione voluptatum molestiae
-              adipisci, beatae obcaecati.</p>
-          </div>
-        </div>
-      </div> -->
       <h2 class="display-4">원하는 패키지를 선택해주세요 </h2>
       <h4>매달 당신의 문앞에서 만나요</h4>
       <div class="container">
@@ -87,28 +61,37 @@
         {% csrf_token%}
         {% if request.user.is_authenticated %}
         <div class="buttonspace">
-          <a href="{% url 'payment' %}" class="btn btn-danger" >구독하기</a>
+          <a href="{% url 'payment' %}"><button style="text-align: center;
+            width: 120px;
+            height: 42px; 
+            background: #DA291C;
+            border-radius: 8px;
+            border-width: 0px;
+            color: white">구독하기</button></a>
         </div>
         {% endif %}
         {% if not request.user.is_authenticated %}
         <div class="buttonspace">
-          <a href="{% url 'subscribe' %}" class="btn btn-danger" onclick="alert('로그인이 필요한 서비스 입니다.');">구독하기</a>
+          <a href="{% url 'payment' %}"><button onclick="alert('로그인이 필요한 서비스 입니다.');" style="text-align: center;
+            width: 120px;
+            height: 42px; 
+            background: #DA291C;
+            border-radius: 8px;
+            border-width: 0px;
+            color: white">구독하기</button></a>
         </div>
+        
         {% endif %}
       </div>
   </section>
 
   <section>
     <div class="container">
-      <div class="dividespace">
         <h2 class="display-4">월간 과자 구독시, 주어지는 할인혜택</h2>
         <img class="test" src="{% static 'main/image/subscribe_detail.svg' %}" alt=""
           style="width: 1100px; height: 700px; z-index: 3; ">
-      </div>
     </div>
   </section>
 </div>
-
-<div class="bottomspace"></div>
 
 {% endblock %}

@@ -6,6 +6,12 @@
 {% endblock %}
 
 {% block content %}
+<style>
+  .bottomspace {
+    margin-top: 50rem;
+    margin-bottom: 50rem;
+  }
+</style>
 <header>
   <div class="overlay"></div>
   <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
@@ -14,8 +20,8 @@
   <div class="container h-100">
     <div class="d-flex h-100 text-center align-items-center">
       <div class="w-100 text-white">
-        <h1 class="display-3">Video Header</h1>
-        <p class="lead mb-0">With HTML5 Video and Bootstrap 4</p>
+        <h1 class="display-3">Lotte제과</h1>
+        <p class="lead mb-0">Monthly Snack Service</p>
         <a href="#subscribe" class="btn btn-primary btn-xl mt-5" style="background-color: transparent;
                 border-color: #ffffff;
                 border-width: 3px;
@@ -23,8 +29,7 @@
                 margin-right: 25px;
                 width: 20%;
                 ">구독하기</a>
-        <!-- <a href="#subscribe" class="btn-rectangular">구독하기</a> -->
-        <!-- <a href="{% url 'subscribe' %}"">link</a> -->
+       
         <a href="https://smartstore.naver.com/dithings07" class="btn btn-primary btn-xl mt-5" style="background-color: transparent;
                 border-color: #ffffff;
                 border-width: 3px;
@@ -48,27 +53,8 @@
   </div>
 </header>
 
-<section class="my-5">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-8 mx-auto">
-        <p>The HTML5 video element uses an mp4 video as a source. Change the source video to add in your own background!
-          The header text is vertically centered using flex utilities that are build into Bootstrap 4.</p>
-        <p>The overlay color can be changed by changing the <code>background-color</code> of the <code>.overlay</code>
-          class in the CSS.</p>
-        <p>Set the mobile fallback image in the CSS by changing the background image of the header element within the
-          media query at the bottom of the CSS snippet.</p>
-        <p class="mb-0">
-          Created by <a href="https://startbootstrap.com">Start Bootstrap</a>
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-
 <section>
-  <div class="container">
+  <div class="container" style="margin-top: 6rem;">
     <div class="row align-items-center">
       <div class="col-lg-6 order-lg-2">
         <div class="p-5">
@@ -76,11 +62,20 @@
         </div>
       </div>
       <div class="col-lg-6 order-lg-1">
-        <div class="p-5">
+        <div class="p-5" style="text-align: left;">
           <h2 class="display-4" id="subscribe" style="font-family: 'SDGothic';
           font-weight: bolder;
           font-style: normal;">당신을 위한<br>과자 추천</h2>
-          <p>Lorem aperiam exercitationem</p>
+          <p>자신의 취향에 맞는 과자를 찾아보세요.</p>
+          <hr color="#877669" style="width: 400px; height: 10px; margin-left: 0;">
+          <p>롯데제과가 추천해드릴게요!</p>
+          <a href="{% url 'recommend' %}"><button style="text-align: center;
+          width: 120px;
+          height: 45px; 
+          background: #877669;
+          border-radius: 8px;
+          border-width: 0px;
+          color: white" >분석하기</button></a>
         </div>
       </div>
     </div>
@@ -88,7 +83,7 @@
 </section>
 
 <section>
-  <div class="container">
+  <div class="container" style="margin-bottom: 8rem;">
     <div class="row align-items-center">
       <div class="col-lg-6">
         <div class="p-5">
@@ -97,57 +92,29 @@
       </div>
       <div class="col-lg-6">
         <img class="left-aligned-img" src="../static/main/img/gwajabox.png" style="max-width: 100%; height: auto;">
-        <div class="p-5" style="text-align: center;">
+        <div class="p-5" style="text-align: right;">
           <h2 class="display-4" style="font-family: 'SDGothic';
           font-weight: bolder;
           font-style: normal;">월간 과자</h2>
           <p>지금 구독하고 롯데제과의 다양한 과자를 경험하세요.</p>
-          <hr color="#877669" style="height: 10px;">
-          <p>미공개 신상 과자 포함</p>
-          <button style="text-align: center;
+          <hr color="#877669" style="height: 10px; width: 380px; margin-right: 0;">
+          <p>미공개 신상 과자가 포함되어 있어요!</p>
+          <a href="{% url 'subscribe' %}">
+            <button style="text-align: center;
           width: 120px;
           height: 45px; 
           background: #877669;
           border-radius: 8px;
           border-width: 0px;
-          color: white">구독하기</button>
+          color: white">구독하기</button></a>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section>
-  <div class="container">
-    <div class="row align-items-center">
-      <div class="col-lg-6 order-lg-2">
-        <div class="p-5">
-          <img class="img-fluid rounded-circle" src="img/03.jpg" alt="">
-        </div>
-      </div>
-      <div class="col-lg-6 order-lg-1">
-        <div class="p-5">
-          <h2 class="display-4" style="font-family: 'SDGothic';
-          font-weight: bolder;
-          font-style: normal;">더 많은<br>롯데제과 제품이<br>궁금하다면?</h2>
-          <p>네이버 스토어를 통해 보다 편리하게<br>롯데제과 제품을 만나보세요.</p>
-          <form action="https://www.naver.com/" method="get" target="_blank">
-            <button style="text-align: center;
-            width: 120px;
-            height: 45px; 
-            background: #877669;
-            border-radius: 8px;
-            border-width: 0px;
-            color: white">바로가기</button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<header class="masthead text-center text-white"
-style="height: 80%;">
+<header class="masthead text-center text-white" style="height: 90%;">
   <div class="masthead-content">
     <div class="container">
       <h1 class="masthead-heading mb-0" id="m-heading">더 많은 롯데제과 제품이 궁금하다면?</h1>
