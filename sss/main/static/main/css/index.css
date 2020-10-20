@@ -1,3 +1,31 @@
+@font-face {
+  font-family: "SDGothic";
+  src: URL("../fonts/AppleSDGothicNeo-ExtraBold.ttf") format("truetype");
+  font-weight: bolder;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SDGothic";
+  src: URL("../fonts/AppleSDGothicNeo-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SDGothic";
+  src: URL("../fonts/AppleSDGothicNeo-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SDGothic";
+  src: URL("../fonts/AppleSDGothicNeo-Light.ttf") format("truetype");
+  font-weight: lighter;
+  font-style: normal;
+}
+
 header {
     position: relative;
     background-color: black;
