@@ -14,12 +14,32 @@
     <div class="container h-100">
         <div class="d-flex h-100 text-center align-items-center">
             <div class="w-100 text-white">
-                <h1 class="display-3">Video Header</h1>
+                <h1 class="display-3">Video Header</h1> 
                 <p class="lead mb-0">With HTML5 Video and Bootstrap 4</p>
-                <a href="{% url 'subscribe' %}" class="btn btn-primary btn-xl rounded-pill mt-5">구독하기</a>
-                <a href="https://smartstore.naver.com/dithings07" class="btn btn-primary btn-xl rounded-pill mt-5">쇼핑하기</a>
-                <a href="{% url 'recommend' %}" class="btn btn-primary btn-xl rounded-pill mt-5">과자추천</a>
-                <a href="{% url 'result' %}" class="btn btn-primary btn-xl rounded-pill mt-5">결과페이지</a>
+                <a href="#subscribe" class="btn btn-primary btn-xl mt-5"
+                style="background-color: transparent;
+                border-color: #ffffff;
+                border-width: 3px;
+                margin-left: 25px;
+                margin-right: 25px;
+                width: 20%;
+                ">구독하기</a>
+                <!-- <a href="#subscribe" class="btn-rectangular">구독하기</a> -->
+                <!-- <a href="{% url 'subscribe' %}"">link</a> -->
+                <a href="https://smartstore.naver.com/dithings07" class="btn btn-primary btn-xl mt-5"
+                style="background-color: transparent;
+                border-color: #ffffff;
+                border-width: 3px;
+                margin-left: 25px;
+                margin-right: 25px;
+                width: 20%;">쇼핑하기</a>
+                <a href="{% url 'recommend' %}" class="btn btn-primary btn-xl mt-5"
+                style="background-color: transparent;
+                border-color: #ffffff;
+                border-width: 3px;
+                margin-left: 25px;
+                margin-right: 25px;
+                width: 20%;">과자추천</a>
             </div>
         </div>
     </div>
@@ -39,22 +59,6 @@
       </div>
     </div>
   </section>
-
-  
-  
-<header class="masthead text-center text-white">
-    <div class="masthead-content">
-      <div class="container">
-        <h1 class="masthead-heading mb-0">One Page Wonder</h1>
-        <h2 class="masthead-subheading mb-0">Will Rock Your Socks Off</h2>
-        <a href="#" class="btn btn-primary btn-xl rounded-pill mt-5">Learn More</a>
-      </div>
-    </div>
-    <div class="bg-circle-1 bg-circle"></div>
-    <div class="bg-circle-2 bg-circle"></div>
-    <div class="bg-circle-3 bg-circle"></div>
-    <div class="bg-circle-4 bg-circle"></div>
-  </header>
     
 
 <section>
@@ -67,8 +71,8 @@
       </div>
       <div class="col-lg-6 order-lg-1">
         <div class="p-5">
-          <h2 class="display-4">For those about to rock...</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod aliquid, mollitia odio veniam sit iste esse assumenda amet aperiam exercitationem, ea animi blanditiis recusandae! Ratione voluptatum molestiae adipisci, beatae obcaecati.</p>
+          <h2 class="display-4" id="subscribe">당신을 위한<br>과자 추천</h2>
+          <p>Lorem aperiam exercitationem</p>
         </div>
       </div>
     </div>
@@ -84,9 +88,21 @@
         </div>
       </div>
       <div class="col-lg-6">
-        <div class="p-5">
-          <h2 class="display-4">We salute you!</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod aliquid, mollitia odio veniam sit iste esse assumenda amet aperiam exercitationem, ea animi blanditiis recusandae! Ratione voluptatum molestiae adipisci, beatae obcaecati.</p>
+        <img class="left-aligned-img" src="../static/main/img/gwajabox.png"
+        style="max-width: 100%; height: auto;">
+        <div class="p-5" style="text-align: center;">
+          <h2 class="display-4">월간 과자</h2>
+          <p>지금 구독하고 롯데제과의 다양한 과자를 경험하세요.</p>
+          <hr color="#877669" style="height: 10px;">
+          <p>미공개 신상 과자 포함</p>
+          <button style="text-align: center;
+          width: 120px;
+          height: 45px; 
+          background: #877669;
+          border-radius: 8px;
+          border-width: 0px;
+          color: white">구독하기</button>
+
         </div>
       </div>
     </div>
@@ -103,12 +119,36 @@
       </div>
       <div class="col-lg-6 order-lg-1">
         <div class="p-5">
-          <h2 class="display-4">Let there be rock!</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod aliquid, mollitia odio veniam sit iste esse assumenda amet aperiam exercitationem, ea animi blanditiis recusandae! Ratione voluptatum molestiae adipisci, beatae obcaecati.</p>
+          <h2 class="display-4">더 많은<br>롯데제과 제품이<br>궁금하다면?</h2>
+          <p>네이버 스토어를 통해 보다 편리하게<br>롯데제과 제품을 만나보세요.</p>
+          <form action="https://www.naver.com/" method="get" target="_blank">
+            <button style="text-align: center;
+            width: 120px;
+            height: 45px; 
+            background: #877669;
+            border-radius: 8px;
+            border-width: 0px;
+            color: white">바로가기</button>
+          </form>
         </div>
       </div>
     </div>
   </div>
 </section>
+
+<header class="masthead text-center text-white"
+style="height: 50%;">
+  <div class="masthead-content">
+    <div class="container">
+      <h1 class="masthead-heading mb-0" id="m-heading">더 많은 롯데제과 제품이 궁금하다면?</h1>
+      <h2 class="masthead-subheading mb-0" id="m-subheading">네이버 스토어를 통해<br>보다 편리하게 롯데제과 제품을 만나보세요.</h2>
+      <a href="#" class="btn btn-primary btn-xl rounded-pill mt-5">Learn More</a>
+    </div>
+  </div>
+  <div class="bg-circle-1 bg-circle"></div>
+  <div class="bg-circle-2 bg-circle"></div>
+  <div class="bg-circle-3 bg-circle"></div>
+  <div class="bg-circle-4 bg-circle"></div>
+</header>
 
 {% endblock %}
