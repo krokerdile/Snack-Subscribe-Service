@@ -81,7 +81,7 @@
                     <div class="form-row">
                         <img id="sn_sub" src="{% static 'main/img/snack_subscribe.png' %}">
                     </div>
-                    <button type="submit" class="btn btn-danger">구독 서비스 결제</button>
+                    <a href="{% url 'home' %}" type="submit" class="btn btn-danger" onclick="alert('결제완료 되었습니다.');" >구독 서비스 결제</a>
                 </form>
               </div>
             <!-- </div> -->

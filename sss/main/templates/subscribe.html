@@ -73,9 +73,17 @@
             id="img2">
 
         </div>
+        {% csrf_token%}
+        {% if request.user.is_authenticated %}
         <div class="buttonspace">
-          <a href="{% url 'subscribe' %}" class="btn btn-danger">구독하기</a>
+          <a href="{% url 'payment' %}" class="btn btn-danger" >구독하기</a>
         </div>
+        {% endif %}
+        {% if not request.user.is_authenticated %}
+        <div class="buttonspace">
+          <a href="{% url 'subscribe' %}" class="btn btn-danger" onclick="alert('로그인이 필요한 서비스 입니다.');">구독하기</a>
+        </div>
+        {% endif %}
       </div>
 
   </section>
