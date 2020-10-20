@@ -5,7 +5,7 @@
 
 {% block content %}
 <style>
-  .bottomspace{
+  .bottomspace {
     margin-top: 40rem;
     margin-bottom: 40rem;
   }
@@ -14,15 +14,13 @@
     position: absolute;
     display: flex;
     flex-direction: horizontal;
-    width: 330px;
-    height: 309px;
     top: 120px;
-    padding-left: 14rem;
+    padding-left: 10rem;
   }
 
   .buttonspace {
     position: absolute;
-    top: 480px;
+    top: 530px;
     padding-left: 30rem;
   }
 
@@ -30,8 +28,8 @@
     position: absolute;
     width: 1000px;
     height: 309px;
-    top: 550px;
-    padding-left: 17.5rem;
+    top: 600px;
+    /* padding-left: 7rem; */
   }
 
   .wrapper {
@@ -64,14 +62,27 @@
           </div>
         </div>
       </div> -->
-      <h2 class="display-4">Which pack do you want to select? </h2>
+      <h2 class="display-4">원하는 패키지를 선택해주세요 </h2>
+      <h4>매달 당신의 문앞에서 만나요</h4>
       <div class="container">
         <div class="selectpack">
-          <img src="{% static 'main/img/maniapack.png' %}" alt="" style="width: 330px; height: 309px; z-index: 3; "
-            id="img1">
-          <img src="{% static 'main/img/sopack.png' %}" alt="" style="width: 330px; height: 309px; z-index: 3; "
-            id="img2">
+          <img onclick="clickimage1()" src="{% static 'main/img/maniapackorigin.png' %}" alt=""
+            style="width: 330px; height: 356px; z-index: 3; " id="img1">
+          <img onclick="clickimage2()" src="{% static 'main/img/sopackorigin.png' %}" alt=""
+            style="width: 330px; height: 356px; z-index: 3; " id="img2">
 
+          <script>
+            function clickimage1() {
+              document.getElementById("img1").src = "{% static 'main/img/maniapackcheck.png' %}";
+              document.getElementById("img2").src = "{% static 'main/img/sopackorigin.png' %}";
+            }
+          </script>
+          <script>
+            function clickimage2() {
+              document.getElementById("img2").src = "{% static 'main/img/sopackcheck.png' %}";
+              document.getElementById("img1").src = "{% static 'main/img/maniapackorigin.png' %}";
+            }
+          </script>
         </div>
         {% csrf_token%}
         {% if request.user.is_authenticated %}
@@ -85,17 +96,19 @@
         </div>
         {% endif %}
       </div>
-
   </section>
-  
-  <div class="wrapper">
-    <div class="dividespace">
-      <h2 class="display-4">If you did subscribe, you can get this promotion</h2>
-      <img class="test" src="{% static 'main/image/subscribe_detail.svg' %}" alt=""
-        style="width: 1100px; height: 700px; z-index: 3; ">
+
+  <section>
+    <div class="container">
+      <div class="dividespace">
+        <h2 class="display-4">월간 과자 구독시, 주어지는 할인혜택</h2>
+        <img class="test" src="{% static 'main/image/subscribe_detail.svg' %}" alt=""
+          style="width: 1100px; height: 700px; z-index: 3; ">
+      </div>
     </div>
-  </div>
+  </section>
 </div>
+
 <div class="bottomspace"></div>
 
 {% endblock %}
