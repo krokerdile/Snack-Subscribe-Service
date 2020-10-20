@@ -5,7 +5,6 @@ def home(request):
     return render(request,'home.html')
 
 def recommend(request):
-    
     return render(request,'recommend.html')
 
 def subscribe(request):
@@ -14,5 +13,8 @@ def subscribe(request):
 def shopping(request):
     return render(request,'shopping.html')
 
+def payment(request):
+    return render(request,'payment.html')
 
-    
+def mypage(request):
+    return render(request,'mypage.html')

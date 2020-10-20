@@ -7,4 +7,6 @@ urlpatterns = [
     path('recommend/',main.views.recommend, name='recommend'),
     path('subscribe/',main.views.subscribe, name='subscribe'),
     path('shopping/',main.views.shopping, name='shopping'),
+    path('payment/',main.views.payment,name='payment'),
+    path('mypage/',main.views.mypage,name='mypage'),
 ]
