@@ -72,7 +72,7 @@
         {% endif %}
         {% if not request.user.is_authenticated %}
         <div class="buttonspace">
-          <a href="{% url 'payment' %}"><button onclick="alert('로그인이 필요한 서비스 입니다.');" style="text-align: center;
+          <a href="{% url 'login' %}"><button onclick="alert('로그인이 필요한 서비스 입니다.');" style="text-align: center;
             width: 120px;
             height: 42px; 
             background: #DA291C;
