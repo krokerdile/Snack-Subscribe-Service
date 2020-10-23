@@ -32,29 +32,29 @@ def result(request):
     situation=group5
 
     snacks_result1 = Snack.objects.filter(with_who__icontains = group1)
-    if len(snacks_result1) > 5:
+    if len(snacks_result1) > 3:
         random.shuffle(snacks_result1)
-        snacks_result1 = snacks_result1[0:5]
+        snacks_result1 = snacks_result1[0:3]
     
     snacks_result2 = Snack.objects.filter(texture__icontains = group2)
-    if len(snacks_result2) > 5:
+    if len(snacks_result2) > 3:
         random.shuffle(snacks_result2)
-        snacks_result2 = snacks_result2[0:5]
+        snacks_result2 = snacks_result2[0:3]
 
     snacks_result3 = Snack.objects.filter(flavor__icontains = group3)
-    if len(snacks_result3) > 5:
+    if len(snacks_result3) > 3:
         random.shuffle(snacks_result3)
-        snacks_result3 = snacks_result3[0:5]
+        snacks_result3 = snacks_result3[0:3]
 
     snacks_result4 = Snack.objects.filter(is_one_time__icontains = group4)
-    if len(snacks_result4) > 5:
+    if len(snacks_result4) > 3:
         random.shuffle(snacks_result4)
-        snacks_result4 = snacks_result4[0:5]
+        snacks_result4 = snacks_result4[0:3]
 
     snacks_result5 = Snack.objects.filter(situation__icontains = group5)
-    if len(snacks_result5) > 5:
+    if len(snacks_result5) > 3:
         random.shuffle(snacks_result5)
-        snacks_result5 = snacks_result5[0:5]
+        snacks_result5 = snacks_result5[0:3]
 
     return render(request,'result.html', {'snacks_result1':snacks_result1,
                                         'snacks_result2':snacks_result2,
