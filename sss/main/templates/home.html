@@ -6,7 +6,24 @@
 {% endblock %}
 
 {% block content %}
-
+{% if error1736 %}
+<script>
+  alert('이미 사용하고 있는 아이디입니다!');
+  history.back();
+</script>
+{% endif %}
+{% if error0704 %}
+<script>
+  alert('아이디나 비번이 맞지 않습니다!');
+  history.back();
+</script>
+{% endif %}
+{% if error1219 %}
+<script>
+  alert('비밀번호와 확인용비밀번호가 일치하지 않습니다!');
+  history.back();
+</script>
+{% endif %}
 
 <header>
   <div class="overlay"></div>

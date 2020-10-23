@@ -13,14 +13,16 @@ def signup(request):
         if request.POST["password1"] == request.POST["password2"]:
             try:
                 user=User.objects.get(username=request.POST['userID'])
-                return HttpResponse('이미 사용하고 있는 아이디입니다!')
+                return render(request,"home.html",{'error1736':'error'})
             except User.DoesNotExist:
                 user = User.objects.create_user(
                     username=request.POST["userID"],password=request.POST["password1"]
                 )
                 auth.login(request,user)
                 return redirect('home')
-    return render(request,'signup.html')
+        else:
+            return render(request,"home.html",{'error1219':'error'})        
+    return render(request,'home.html')
 
 def login(request):
     if request.method =="POST":
@@ -31,7 +33,7 @@ def login(request):
             auth.login(request,user)
             return redirect('home')
         else:
-            return HttpResponse('userID or password is incorrect')
+            return render(request,"home.html",{'error0704':'error'})
     else:
         return render(request, 'login.html')
 
