@@ -2,13 +2,32 @@
 {% load static %}
 {% block head %}
 <link href="{% static 'main/css/reuslt.css' %}" rel="stylesheet">
+<style>
+    @font-face {
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff") format("woff");
+    font-family: "GmarketSansBold";
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  h3,h2{
+    font-family: "GmarketSansBold";
+  }
+
+  li{
+    font-family: "GmarketSansBold";
+    color:#877669;
+  }
+</style>
+
+  
 {% endblock %}
 
 {% block content %}
 <div class="wrap">
     <div class="container">
         <div class="row align-items-center">
-            <h2 class="display-5" style="margin-bottom: 2rem; font-weight:bold; font-size:40px;">나의 취향에 맞는 롯데제과</h2>
+            <h2 class="display-5" style="margin-bottom: 2rem; font-weight:bold; font-size:40px; font-family:'GmarketSansBold';">나의 취향에 맞는 롯데제과</h2>
             <ul>
                 <li>추천되는 과자가 다양할 경우, 결과는 유동적입니다.</li>
                 <li>함께 먹고 싶은 과자, 누구와 함께, 어떤 상황에서 마시느냐에 따라 어울리는 제품도 바뀌니, 그때그때 이 퀴즈를 통해 다를 과자를 추천 받아보세요!</li>
@@ -127,9 +146,11 @@
         
         <div class="buttons" style="display:flex; justify-content: center; align-items:center; margin-top: 2rem;">
             <a href="{% url 'subscribe' %}"><button type="button" class="btn btn-primary btn-lg"
-                    style="margin: 2rem;">구독하러 가기</button></a>
+                    style="margin: 2rem;border-color:#DA291C;background: #DA291C;font-family: 'GmarketSansBold';
+                    font-weight: normal;">구독하러 가기</button></a>
             <a href="https://smartstore.naver.com/dithings07"><button type="button" class="btn btn-primary btn-lg"
-                    style="margin: 2rem;">구매하러 가기</button></a>
+                    style="margin: 2rem;background: #DA291C;font-family: 'GmarketSansBold';
+                    font-weight: normal;border-color:#DA291C;">구매하러 가기</button></a>
         </div>
     </div>
 </div>
