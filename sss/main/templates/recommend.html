@@ -67,7 +67,7 @@
   #circle1 {
     background-color: #E4F2FF;
   }
-  
+
 
   #circle2 {
     background-color: rgba(249, 174, 29, 0.83);
@@ -102,7 +102,16 @@
     margin: 3rem;
   }
 
- 
+  input[type=radio] {
+    display: none;
+  }
+
+  .buttonspace {
+    display: flex;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    justify-content: center;
+  }
 </style>
 
 {% endblock %}
@@ -118,264 +127,399 @@
     <div class="quiz">
       <h1 >롯데과자 추천 서비스 Quiz</h1>
     </div>
-    <div class="question">
-      <h1>1. 누구와 함께 먹을건가요?</h1>
-      <div class="image">
-        <img onclick="clickimage1()" id="family" src="{% static 'main/image/family.png' %} ">
+    <form action="{% url 'result' %}" enctype="multipart/form-data" method="POST" onsubmit="return blank_check()">
+      {% csrf_token %}
+      <div class="question" id="question1">
+        <h1>1. 누구와 함께 먹을건가요?</h1>
+        <div class="image">
+          <input type="radio" name="group1" id="r_group1_circle01" onclick="radio_group1();"/><label
+            for="r_group1_circle01">
+            <img id="family" src="{% static 'main/image/family.png' %} ">
+          </label>
+        </div>
+        <div class="image">
+          <input type="radio" name="group1" id="r_group1_circle02" onclick="radio_group1();"/><label
+            for="r_group1_circle02">
+            <img id="woman" src="{% static 'main/image/woman.png' %}">
+          </label>
+
+        </div>
+        <div class="image">
+          <input type="radio" name="group1" id="r_group1_circle03" onclick="radio_group1();"/><label
+            for="r_group1_circle03">
+            <img id="friend" src="{% static 'main/image/friend.png' %}">
+          </label>
+        </div>
+        <hr>
       </div>
-      <div class="image">
-        <img onclick="clickimage2()" id="woman" src="{% static 'main/image/woman.png' %}">
-      </div>
-      <div class="image">
-        <img onclick="clickimage3()" id="friend" src="{% static 'main/image/friend.png' %}">
-      </div>
-      <hr>
-    </div>
 
 
-    <div class="question">
-      <h1>2. 어떤 식감을 좋아하나요?</h1>
-      <div class="items-container"
-        style=" displaly:flex; flex-wrap:no-wrap; flex-direction: row; width: 100%; min-width: 500px; ">
-        <div class="row" style="justify-content: center;">
-          <div class=items style="text-align: center; margin-top:1rem;">
-            <div class="circle" id="circle1" onclick="clickcircle1()">
-              폭신폭신
-            </div>
-            <div class="circle" id="circle2" onclick="clickcircle2()">
-              바삭바삭
-            </div>
-            <div class="circle" id="circle3" onclick="clickcircle3()">
-              쫀득쫀득
-            </div>
-            <div class="circle" id="circle4" onclick="clickcircle4()">
-              와작와작
+      <div class="question" id="question2">
+        <h1>2. 어떤 식감을 좋아하나요?</h1>
+        <div class="items-container"
+          style=" displaly:flex; flex-wrap:no-wrap; flex-direction: row; width: 100%; min-width: 500px; ">
+          <div class="row" style="justify-content: center;">
+            <div class=items style="text-align: center; margin-top:1rem;">
+              <input type="radio" name="group2" id="r_group2_circle01" onclick="radio_group2();" /><label
+                for="r_group2_circle01">
+                <div class="circle" id="circle1">폭신폭신</div>
+              </label>
+              <input type="radio" name="group2" id="r_group2_circle02" onclick="radio_group2();" /><label
+                for="r_group2_circle02">
+                <div class="circle" id="circle2">바삭바삭</div>
+              </label>
+              <input type="radio" name="group2" id="r_group2_circle03" onclick="radio_group2();" /><label
+                for="r_group2_circle03">
+                <div class="circle" id="circle3">쫀득쫀득</div>
+              </label>
+              <input type="radio" name="group2" id="r_group2_circle04" onclick="radio_group2();" /><label
+                for="r_group2_circle04">
+                <div class="circle" id="circle4">와작와작</div>
+              </label>
             </div>
           </div>
         </div>
+        <hr>
       </div>
-      <hr>
-    </div>
 
-    <div class="question">
-      <h1>3. 무슨 맛을 느끼고 싶으신가요?</h1>
-      <div class="items-container"
-        style=" displaly:flex; flex-wrap:no-wrap; flex-direction: row; width: 100%; min-width: 500px; ">
-        <div class="row" style="justify-content: center;">
-          <div class=items style="text-align: center; margin-top:1rem;">
-            <div class="circle" id="circle5" onclick="clickcircle5()">
-              달콤한
-            </div>
-            <div class="circle" id="circle6" onclick="clickcircle6()">
-              매콤한
-            </div>
-            <div class="circle" id="circle7" onclick="clickcircle7()">
-              짭짤한
-            </div>
-            <div class="circle" id="circle8" onclick="clickcircle8()">
-              고소한
+      <div class="question" id="question3">
+        <h1>3. 무슨 맛을 느끼고 싶으신가요?</h1>
+        <div class="items-container"
+          style=" displaly:flex; flex-wrap:no-wrap; flex-direction: row; width: 100%; min-width: 500px; ">
+          <div class="row" style="justify-content: center;">
+            <div class=items style="text-align: center; margin-top:1rem;">
+              <input type="radio" name="group3" id="r_group3_circle01" onclick="radio_group3();" /><label
+                for="r_group3_circle01">
+                <div class="circle" id="circle5">달콤한</div>
+              </label>
+              <input type="radio" name="group3" id="r_group3_circle02" onclick="radio_group3();" /><label
+                for="r_group3_circle02">
+                <div class="circle" id="circle6">매콤한</div>
+              </label>
+              <input type="radio" name="group3" id="r_group3_circle03" onclick="radio_group3();" /><label
+                for="r_group3_circle03">
+                <div class="circle" id="circle7">짭짤한</div>
+              </label>
+              <input type="radio" name="group3" id="r_group3_circle04" onclick="radio_group3();" /><label
+                for="r_group3_circle04">
+                <div class="circle" id="circle8">고소한</div>
+              </label>
             </div>
           </div>
         </div>
+        <hr>
       </div>
-      <hr>
-    </div>
 
-    <div class="question">
-      <h1>4. 밥 먹을 때 어떻게 먹나요?
-        같이 나눠먹기 / 따로 각자 접시에
-      </h1>
-      <div class="items-container"
-        style=" displaly:flex; flex-wrap:no-wrap; flex-direction: row; width: 100%; min-width: 500px; ">
-        <div class="row" style="justify-content: center;">
-          <div class=items style="text-align: center; margin-top:1rem;">
-            <div class="image">
-              <img onclick="clickimage4()" id="meal_plate" src="{% static 'main/image/meal_plate.png' %}">
-            </div>
-            <div class="image">
-              <img onclick="clickimage5()" id="meal_plate_2" src="{% static 'main/image/meal_plate_2.png' %}">
+      <div class="question" id="question4">
+        <h1>4. 밥 먹을 때 어떻게 먹나요?
+          같이 나눠먹기 / 따로 각자 접시에
+        </h1>
+        <div class="items-container"
+          style=" displaly:flex; flex-wrap:no-wrap; flex-direction: row; width: 100%; min-width: 500px; ">
+          <div class="row" style="justify-content: center;">
+            <div class=items style="text-align: center; margin-top:1rem;">
+              <div class="image">
+                <input type="radio" name="group4" id="r_group4_circle01" onclick="radio_group4();" /><label
+                  for="r_group4_circle01">
+                  <img id="meal_plate" src="{% static 'main/image/meal_plate.png' %}">
+                </label>
+              </div>
+              <div class="image">
+                <input type="radio" name="group4" id="r_group4_circle02" onclick="radio_group4();" /><label
+                  for="r_group4_circle02">
+                  <img id="meal_plate_2" src="{% static 'main/image/meal_plate_2.png' %}">
+                </label>
+              </div>
             </div>
           </div>
         </div>
+        <hr>
       </div>
-      <hr>
-    </div>
 
-    <div class="question">
-      <h1>5. 언제 먹을건가요?</h1>
-      <div class="items-container"
-        style=" displaly:flex; flex-wrap:no-wrap; flex-direction: row; width: 100%; min-width: 500px; ">
-        <div class="row" style="justify-content: center;">
-          <div class=items style="text-align: center; margin-top:1rem;">
-            <div class="image">
-              <img onclick="clickimage6()" id="snack" src="{% static 'main/image/snack.png' %}">
-            </div>
-            <div class="image">
-              <img onclick="clickimage7()" id="bagel" src="{% static 'main/image/bagel.png' %}">
-            </div>
-            <div class="image">
-              <img onclick="clickimage8()" id="beer" src="{% static 'main/image/beer.png' %}">
-            </div>
-            <div class="image">
-              <img onclick="clickimage9()" id="mouth" src="{% static 'main/image/mouth.png' %}">
+      <div class="question" id="question5">
+        <h1>5. 언제 먹을건가요?</h1>
+        <div class="items-container"
+          style=" displaly:flex; flex-wrap:no-wrap; flex-direction: row; width: 100%; min-width: 500px; ">
+          <div class="row" style="justify-content: center;">
+            <div class=items style="text-align: center; margin-top:1rem;">
+              <div class="image">
+                <input type="radio" name="group5" id="r_group5_circle01" onclick="radio_group5();" /><label
+                  for="r_group5_circle01">
+                  <img id="snack" src="{% static 'main/image/snack.png' %}">
+                </label>
+              </div>
+              <div class="image">
+                <input type="radio" name="group5" id="r_group5_circle02" onclick="radio_group5();" /><label
+                  for="r_group5_circle02">
+                  <img id="bagel" src="{% static 'main/image/bagel.png' %}">
+                </label>
+              </div>
+              <div class="image">
+                <input type="radio" name="group5" id="r_group5_circle03" onclick="radio_group5();" /><label
+                  for="r_group5_circle03">
+                  <img id="beer" src="{% static 'main/image/beer.png' %}">
+                </label>
+              </div>
+              <div class="image">
+                <input type="radio" name="group5" id="r_group5_circle04" onclick="radio_group5();" /><label
+                  for="r_group5_circle04">
+                  <img id="mouth" src="{% static 'main/image/mouth.png' %}">
+                </label>
+              </div>
             </div>
           </div>
         </div>
+        <hr>
       </div>
-      <hr>
-    </div>
-    <div class="container" style="text-align: center;">
-    <a href="{% url 'result' %}"><button style="text-align: center;
-      width: 120px;
-      height: 45px; 
-      background: #DA291C;
-      border-radius: 8px;
-      border-width: 0px;
-      text-align: center;
-      color: white">분석하기</button></a>
-    </div>
+      <div class="buttonspace">
+        <input class="button1" type="submit" value="제출하기" style="
+        text-align: center;
+        width: 120px;
+        height: 42px; 
+        background: #DA291C;
+        border-radius: 8px;
+        border-width: 0px;
+        color: white">
+      </div>
+    </form>
+
   </div>
 </div>
 
 
 <!-- javascript function imageclick시 흑백으로 바뀜 (나중에 value넘겨주는것도 추가하면될듯 )-->
 <script>
-  function clickimage1() {
-    document.getElementById("family").src = "{% static 'main/image/familyBK.png' %}";
-    document.getElementById("family").style.border= "1px solid #000000";
-    document.getElementById("woman").src = "{% static 'main/image/woman.png' %}";
-    document.getElementById("woman").style.border= "0";
-    document.getElementById("friend").src = "{% static 'main/image/friend.png' %}";
-    document.getElementById("friend").style.border= "0";
+  function radio_group1() {
+    var radio_chk1 = document.getElementById("r_group1_circle01");    // 라디오버튼 동그라미 부분 가져오기
+    var radio_chk2 = document.getElementById("r_group1_circle02");   // 라디오버튼 동그라미 부분 가져오기
+    var radio_chk3 = document.getElementById("r_group1_circle03");
+    var family = document.getElementById("family");               // 이미지 변화주기위해 가져오기
+    var woman = document.getElementById("woman");               // 이미지 변화주기위해 가져오기
+    var friend = document.getElementById("friend");
+
+    if (radio_chk1.checked == true) {  //radio_chk  체크유무.
+      alert("첫번째 라디오버튼 켜짐!");
+      family.src = "{% static 'main/image/familyBK.png' %}"; // true 일때 family의 이미지를 변경 
+    } else {
+      alert("첫번째 라디오버튼 꺼짐!");
+      family.src = "{% static 'main/image/family.png' %}"; // false 일때 family의 이미지를 변경
+    }
+    if (radio_chk2.checked == true) {
+      alert("두번째 라디오버튼 켜짐!");
+      woman.src = "{% static 'main/image/womanBK.png' %}";
+    } else {
+      alert("두번째 라디오버튼 꺼짐!");
+      woman.src = "{% static 'main/image/woman.png' %}";
+    }
+    if (radio_chk3.checked == true) {
+      alert("세번째 라디오버튼 켜짐!");
+      friend.src = "{% static 'main/image/friendBK.png' %}";
+    } else {
+      alert("세번째 라디오버튼 꺼짐!");
+      friend.src = "{% static 'main/image/friend.png' %}";
+    }
   }
-</script>
-<script>
-  function clickimage2() {
-    document.getElementById("family").src = "{% static 'main/image/family.png' %}";
-    document.getElementById("family").style.border= "0";
-    document.getElementById("woman").src = "{% static 'main/image/womanBK.png' %}";
-    document.getElementById("woman").style.border= "1px solid #000000";
-    document.getElementById("friend").src = "{% static 'main/image/friend.png' %}";
-    document.getElementById("friend").style.border= "0";
+
+  function radio_group2() {
+    var radio_chk1 = document.getElementById("r_group2_circle01");    // 라디오버튼 동그라미 부분 가져오기
+    var radio_chk2 = document.getElementById("r_group2_circle02");   // 라디오버튼 동그라미 부분 가져오기
+    var radio_chk3 = document.getElementById("r_group2_circle03");
+    var radio_chk4 = document.getElementById("r_group2_circle04");
+    var circle1 = document.getElementById("circle1");               // 이미지 변화주기위해 가져오기
+    var circle2 = document.getElementById("circle2");               // 이미지 변화주기위해 가져오기
+    var circle3 = document.getElementById("circle3");
+    var circle4 = document.getElementById("circle4");
+
+    if (radio_chk1.checked == true) {  //radio_chk  체크유무.
+      alert("첫번째 라디오버튼 켜짐!");
+      circle1.style.backgroundColor = "#C4C4C4";
+    } else {
+      alert("첫번째 라디오버튼 꺼짐!");
+      circle1.style.backgroundColor = "#E4F2FF";
+    }
+    if (radio_chk2.checked == true) {
+      alert("두번째 라디오버튼 켜짐!");
+      circle2.style.backgroundColor = "#C4C4C4";
+    } else {
+      alert("두번째 라디오버튼 꺼짐!");
+      circle2.style.backgroundColor = "#F9AE1D";
+    }
+    if (radio_chk3.checked == true) {
+      alert("세번째 라디오버튼 켜짐!");
+      circle3.style.backgroundColor = "#C4C4C4";
+    } else {
+      alert("세번째 라디오버튼 꺼짐!");
+      circle3.style.backgroundColor = "#FFC5B8";
+    }
+    if (radio_chk4.checked == true) {
+      alert("네번째 라디오버튼 켜짐!");
+      circle4.style.backgroundColor = "#C4C4C4";
+    } else {
+      alert("네번째 라디오버튼 꺼짐!");
+      circle4.style.backgroundColor = "#61A2D1";
+    }
   }
-</script>
-<script>
-  function clickimage3() {
-    document.getElementById("family").src = "{% static 'main/image/family.png' %}";
-    document.getElementById("family").style.border= "0";
-    document.getElementById("woman").src = "{% static 'main/image/woman.png' %}";
-    document.getElementById("woman").style.border= "0";
-    document.getElementById("friend").src = "{% static 'main/image/friendBK.png' %}";
-    document.getElementById("friend").style.border= "1px solid #000000";
+
+  function radio_group3() {
+    var radio_chk1 = document.getElementById("r_group3_circle01");    // 라디오버튼 동그라미 부분 가져오기
+    var radio_chk2 = document.getElementById("r_group3_circle02");   // 라디오버튼 동그라미 부분 가져오기
+    var radio_chk3 = document.getElementById("r_group3_circle03");
+    var radio_chk4 = document.getElementById("r_group3_circle04");
+    var circle1 = document.getElementById("circle5");               // 이미지 변화주기위해 가져오기
+    var circle2 = document.getElementById("circle6");               // 이미지 변화주기위해 가져오기
+    var circle3 = document.getElementById("circle7");
+    var circle4 = document.getElementById("circle8");
+
+    if (radio_chk1.checked == true) {  //radio_chk  체크유무.
+      alert("첫번째 라디오버튼 켜짐!");
+      circle1.style.backgroundColor = "#C4C4C4";
+    } else {
+      alert("첫번째 라디오버튼 꺼짐!");
+      circle1.style.backgroundColor = "#FFEDAC";
+    }
+    if (radio_chk2.checked == true) {
+      alert("두번째 라디오버튼 켜짐!");
+      circle2.style.backgroundColor = "#C4C4C4";
+    } else {
+      alert("두번째 라디오버튼 꺼짐!");
+      circle2.style.backgroundColor = "#F56638";
+    }
+    if (radio_chk3.checked == true) {
+      alert("세번째 라디오버튼 켜짐!");
+      circle3.style.backgroundColor = "#C4C4C4";
+    } else {
+      alert("세번째 라디오버튼 꺼짐!");
+      circle3.style.backgroundColor = "#D4F5FD";
+    }
+    if (radio_chk4.checked == true) {
+      alert("네번째 라디오버튼 켜짐!");
+      circle4.style.backgroundColor = "#C4C4C4";
+    } else {
+      alert("네번째 라디오버튼 꺼짐!");
+      circle4.style.backgroundColor = "#FFCAE3";
+    }
   }
-</script>
-<script>
-  function clickimage4() {
-    document.getElementById("meal_plate").src = "{% static 'main/image/meal_plateBK.png' %}";
-    document.getElementById("meal_plate_2").src = "{% static 'main/image/meal_plate_2.png' %}";
+
+  function radio_group4() {
+    var radio_chk1 = document.getElementById("r_group4_circle01");    // 라디오버튼 동그라미 부분 가져오기
+    var radio_chk2 = document.getElementById("r_group4_circle02");   // 라디오버튼 동그라미 부분 가져오기
+    var meal_plate = document.getElementById("meal_plate");               // 이미지 변화주기위해 가져오기
+    var meal_plate_2 = document.getElementById("meal_plate_2");               // 이미지 변화주기위해 가져오기
+
+    if (radio_chk1.checked == true) {  //radio_chk  체크유무.
+      alert("첫번째 라디오버튼 켜짐!");
+      meal_plate.src = "{% static 'main/image/meal_plateBK.png' %}";
+    } else {
+      alert("첫번째 라디오버튼 꺼짐!");
+      meal_plate.src = "{% static 'main/image/meal_plate.png' %}";
+    }
+    if (radio_chk2.checked == true) {
+      alert("두번째 라디오버튼 켜짐!");
+      meal_plate_2.src = "{% static 'main/image/meal_plate_2BK.png' %}";
+    } else {
+      alert("두번째 라디오버튼 꺼짐!");
+      meal_plate_2.src = "{% static 'main/image/meal_plate_2.png' %}";
+    }
   }
-</script>
-<script>
-  function clickimage5() {
-    document.getElementById("meal_plate").src = "{% static 'main/image/meal_plate.png' %}";
-    document.getElementById("meal_plate_2").src = "{% static 'main/image/meal_plate_2BK.png' %}";
-  }
-</script>
-<script>
-  function clickimage6() {
-    document.getElementById("snack").src = "{% static 'main/image/snackBK.png' %}";
-    document.getElementById("bagel").src = "{% static 'main/image/bagel.png' %}";
-    document.getElementById("beer").src = "{% static 'main/image/beer.png' %}";
-    document.getElementById("mouth").src = "{% static 'main/image/mouth.png' %}";
-  }
-</script>
-<script>
-  function clickimage7() {
-    document.getElementById("snack").src = "{% static 'main/image/snack.png' %}";
-    document.getElementById("bagel").src = "{% static 'main/image/bagelBK.png' %}";
-    document.getElementById("beer").src = "{% static 'main/image/beer.png' %}";
-    document.getElementById("mouth").src = "{% static 'main/image/mouth.png' %}";
-  }
-</script>
-<script>
-  function clickimage8() {
+
+  function radio_group5() {
+    var radio_chk1 = document.getElementById("r_group5_circle01");    // 라디오버튼 동그라미 부분 가져오기
+    var radio_chk2 = document.getElementById("r_group5_circle02");   // 라디오버튼 동그라미 부분 가져오기
+    var radio_chk3 = document.getElementById("r_group5_circle03");
+    var radio_chk4 = document.getElementById("r_group5_circle04");
+    var snack = document.getElementById("snack");               // 이미지 변화주기위해 가져오기
+    var bagel = document.getElementById("bagel");               // 이미지 변화주기위해 가져오기
+    var beer = document.getElementById("beer");
+    var mouth = document.getElementById("mouth");
+
+
     document.getElementById("snack").src = "{% static 'main/image/snack.png' %}";
     document.getElementById("bagel").src = "{% static 'main/image/bagel.png' %}";
     document.getElementById("beer").src = "{% static 'main/image/beerBK.png' %}";
     document.getElementById("mouth").src = "{% static 'main/image/mouth.png' %}";
+
+    if (radio_chk1.checked == true) {  //radio_chk  체크유무.
+      alert("첫번째 라디오버튼 켜짐!");
+      snack.src = "{% static 'main/image/snackBK.png' %}"; // true 일때 family의 이미지를 변경 
+    } else {
+      alert("첫번째 라디오버튼 꺼짐!");
+      snack.src = "{% static 'main/image/snack.png' %}"; // false 일때 family의 이미지를 변경
+    }
+    if (radio_chk2.checked == true) {
+      alert("두번째 라디오버튼 켜짐!");
+      bagel.src = "{% static 'main/image/bagelBK.png' %}";
+    } else {
+      alert("두번째 라디오버튼 꺼짐!");
+      bagel.src = "{% static 'main/image/bagel.png' %}";
+    }
+    if (radio_chk3.checked == true) {
+      alert("세번째 라디오버튼 켜짐!");
+      beer.src = "{% static 'main/image/beerBK.png' %}";
+    } else {
+      alert("세번째 라디오버튼 꺼짐!");
+      beer.src = "{% static 'main/image/beer.png' %}";
+    }
+    if (radio_chk4.checked == true) {
+      alert("네번째 라디오버튼 켜짐!");
+      mouth.src = "{% static 'main/image/mouthBK.png' %}";
+    } else {
+      alert("네번째 라디오버튼 꺼짐!");
+      mouth.src = "{% static 'main/image/mouth.png' %}";
+    }
   }
-</script>
-<script>
-  function clickimage9() {
-    document.getElementById("snack").src = "{% static 'main/image/snack.png' %}";
-    document.getElementById("bagel").src = "{% static 'main/image/bagel.png' %}";
-    document.getElementById("beer").src = "{% static 'main/image/beer.png' %}";
-    document.getElementById("mouth").src = "{% static 'main/image/mouthBK.png' %}";
+  function blank_check()
+  {
+    var group1 = document.getElementsByName("group1");
+    var group2 = document.getElementsByName("group2"); 
+    var group3 = document.getElementsByName("group3"); 
+    var group4 = document.getElementsByName("group4"); 
+    var group5 = document.getElementsByName("group5"); 
+    var chk1 = false;
+    var chk2 = false;
+    var chk3 = false;
+    var chk4 = false;
+    var chk5 = false;
+    for(var i=0; i<group1.length;i++)
+    {
+      if(group1[i].checked){
+        chk1= true;
+      }
+    }
+    for(var i=0; i<group2.length;i++)
+    {
+      if(group2[i].checked){
+        chk2= true;
+      }
+    }
+    for(var i=0; i<group3.length;i++)
+    {
+      if(group3[i].checked){
+        chk3= true;
+      }
+    }
+    for(var i=0; i<group4.length;i++)
+    {
+      if(group4[i].checked){
+        chk4= true;
+      }
+    }
+    for(var i=0; i<group5.length;i++)
+    {
+      if(group5[i].checked){
+        chk5= true;
+      }
+    }
+
+    if(chk1 && chk2 && chk3 && chk4 && chk5)
+    {
+      return true;
+    }
+    else{
+      alert("빈칸을 채워주세요!");
+      return false;
+    }
   }
+
 </script>
-<!-- 동그란 버튼 click시 css backgroundcolor바꿔줌 -->
-<script>
-  function clickcircle1() {
-    document.getElementById("circle1").style.backgroundColor="#C4C4C4";
-    document.getElementById("circle2").style.backgroundColor="F9AE1D";
-    document.getElementById("circle3").style.backgroundColor="#FFC5B8";
-    document.getElementById("circle4").style.backgroundColor="#61A2D1";
-  }
-</script>
-<script>
-  function clickcircle2() {
-    document.getElementById("circle1").style.backgroundColor="#E4F2FF";
-    document.getElementById("circle2").style.backgroundColor="#C4C4C4";
-    document.getElementById("circle3").style.backgroundColor="#FFC5B8";
-    document.getElementById("circle4").style.backgroundColor="#61A2D1";
-  }
-</script>
-<script>
-  function clickcircle3() {
-    document.getElementById("circle1").style.backgroundColor="#E4F2FF";
-    document.getElementById("circle2").style.backgroundColor="#F9AE1D";
-    document.getElementById("circle3").style.backgroundColor="#C4C4C4";
-    document.getElementById("circle4").style.backgroundColor="#61A2D1";
-  }
-</script>
-<script>
-  function clickcircle4() {
-    document.getElementById("circle1").style.backgroundColor="#E4F2FF";
-    document.getElementById("circle2").style.backgroundColor="F9AE1D";
-    document.getElementById("circle3").style.backgroundColor="#FFC5B8";
-    document.getElementById("circle4").style.backgroundColor="#C4C4C4";
-  }
-</script>
-<script>
-  function clickcircle5() {
-    document.getElementById("circle5").style.backgroundColor="#C4C4C4";
-    document.getElementById("circle6").style.backgroundColor= "#F56638";
-    document.getElementById("circle7").style.backgroundColor="#D4F5FD";
-    document.getElementById("circle8").style.backgroundColor="#FFCAE3";
-  }
-</script>
-<script>
-  function clickcircle6() {
-    document.getElementById("circle5").style.backgroundColor="#FFEDAC";
-    document.getElementById("circle6").style.backgroundColor= "#C4C4C4";
-    document.getElementById("circle7").style.backgroundColor="#D4F5FD";
-    document.getElementById("circle8").style.backgroundColor="#FFCAE3";
-  }
-</script>
-<script>
-  function clickcircle7() {
-    document.getElementById("circle5").style.backgroundColor="#FFEDAC";
-    document.getElementById("circle6").style.backgroundColor= "#F56638";
-    document.getElementById("circle7").style.backgroundColor="#C4C4C4";
-    document.getElementById("circle8").style.backgroundColor="#FFCAE3";
-  }
-</script>
-<script>
-  function clickcircle8() {
-    document.getElementById("circle5").style.backgroundColor="#FFEDAC";
-    document.getElementById("circle6").style.backgroundColor= "#F56638";
-    document.getElementById("circle7").style.backgroundColor="#D4F5FD";
-    document.getElementById("circle8").style.backgroundColor="#C4C4C4";
-  }
-</script>
+
 {% endblock %}
