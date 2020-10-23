@@ -3,8 +3,17 @@
 {% block head %}
 
 <style>
+
+@font-face {
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff")
+    format("woff");
+  font-family: "GmarketSansBold";
+  font-weight: normal;
+  font-style: normal;
+}
+
   .quiz {
-    font-family: 'Roboto';
+    font-family: "GmarketSansBold";
     font-style: Regular;
     text-align: left;
     vertical-align: top;
@@ -12,14 +21,14 @@
   }
 
   .quiz h1 {
-    font-family: 'Roboto';
+    font-family: "GmarketSansBold";
     font-weight: bold;
     font-size: 40px;
     margin-bottom: 4rem;
   }
 
   .question {
-    font-family: 'Roboto';
+    font-family: "GmarketSansBold";
     font-style: Regular;
     text-align: Center;
     vertical-align: top;
@@ -28,10 +37,11 @@
   }
 
   .question h1 {
-    font-family: 'Roboto';
+    font-family: "GmarketSansBold";
     font-size: 24px;
     margin-top: 2rem;
     margin-bottom: 2rem;
+    font-weight: bold;
   }
 
   hr {
@@ -50,7 +60,7 @@
     vertical-align: middle;
     line-height: 130px;
     text-align: center;
-    font-size: 12px;
+    font-size: 15px;
     float: left;
   }
 
@@ -91,6 +101,8 @@
     display: inline;
     margin: 3rem;
   }
+
+ 
 </style>
 
 {% endblock %}
@@ -104,7 +116,7 @@
 <div class="wrap">
   <div class="container">
     <div class="quiz">
-      <h1>롯데과자 추천 서비스 Quiz</h1>
+      <h1 >롯데과자 추천 서비스 Quiz</h1>
     </div>
     <div class="question">
       <h1>1. 누구와 함께 먹을건가요?</h1>
@@ -211,6 +223,16 @@
         </div>
       </div>
       <hr>
+    </div>
+    <div class="container" style="text-align: center;">
+    <a href="{% url 'result' %}"><button style="text-align: center;
+      width: 120px;
+      height: 45px; 
+      background: #DA291C;
+      border-radius: 8px;
+      border-width: 0px;
+      text-align: center;
+      color: white">분석하기</button></a>
     </div>
   </div>
 </div>
