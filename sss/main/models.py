@@ -12,4 +12,5 @@ class Snack(models.Model):
     with_who =models.CharField(max_length=20)
     texture =models.CharField(max_length=20)
     flavor =models.CharField(max_length=20)
+    is_one_time=models.CharField(max_length=20)
     situation =models.CharField(max_length=20)
