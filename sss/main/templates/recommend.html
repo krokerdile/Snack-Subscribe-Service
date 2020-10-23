@@ -232,16 +232,16 @@
               <div class="image">
                 <input type="radio" name="group4" id="r_group4_circle01" onclick="radio_group4();" value="한번에" /><label
                   for="r_group4_circle01">
-                  <img id="meal_plate" src="{% static 'main/image/meal_plate.png' %}">
+                  <img id="once" src="{% static 'main/image/once.png' %}">
                 </label>
                 <h5>한번에</h5>
               </div>
               <div class="image">
                 <input type="radio" name="group4" id="r_group4_circle02" onclick="radio_group4();" value="나눠서" /><label
                   for="r_group4_circle02">
-                  <img id="meal_plate_2" src="{% static 'main/image/meal_plate_2.png' %}">
+                  <img id="many" src="{% static 'main/image/many.png' %}">
                 </label>
-                <h5>혼자</h5>
+                <h5>나눠서</h5>
               </div>
             </div>
           </div>
@@ -422,22 +422,22 @@
   function radio_group4() {
     var radio_chk1 = document.getElementById("r_group4_circle01");    // 라디오버튼 동그라미 부분 가져오기
     var radio_chk2 = document.getElementById("r_group4_circle02");   // 라디오버튼 동그라미 부분 가져오기
-    var meal_plate = document.getElementById("meal_plate");               // 이미지 변화주기위해 가져오기
-    var meal_plate_2 = document.getElementById("meal_plate_2");               // 이미지 변화주기위해 가져오기
+    var once = document.getElementById("once");               // 이미지 변화주기위해 가져오기
+    var many = document.getElementById("many");               // 이미지 변화주기위해 가져오기
 
     if (radio_chk1.checked == true) {  //radio_chk  체크유무.
       //alert("첫번째 라디오버튼 켜짐!");
-      meal_plate.src = "{% static 'main/image/meal_plateBK.png' %}";
+      once.src = "{% static 'main/image/onceBK.png' %}";
     } else {
       //alert("첫번째 라디오버튼 꺼짐!");
-      meal_plate.src = "{% static 'main/image/meal_plate.png' %}";
+      once.src = "{% static 'main/image/once.png' %}";
     }
     if (radio_chk2.checked == true) {
       //alert("두번째 라디오버튼 켜짐!");
-      meal_plate_2.src = "{% static 'main/image/meal_plate_2BK.png' %}";
+      many.src = "{% static 'main/image/manyBK.png' %}";
     } else {
       //alert("두번째 라디오버튼 꺼짐!");
-      meal_plate_2.src = "{% static 'main/image/meal_plate_2.png' %}";
+      many.src = "{% static 'main/image/many.png' %}";
     }
   }
 
