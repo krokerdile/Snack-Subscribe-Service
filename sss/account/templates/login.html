@@ -16,9 +16,28 @@
     html {
       scroll-behavior: smooth;
     }
-    .no_height{
+    
+    /* .no_height{
+      
       height:2400px;
+      -ms-overflow-style: none;
     }
+    .no_height::-webkit-scrollbar{ display:none; } */
+
+    #page_wrap{
+      overflow:auto;
+    }
+    #page_wrap::-webkit-scrollbar{display:none;}
+    #page1{
+      height:800px;
+    }
+    #page2{
+      height:800px;
+    }
+    #page3{
+      height:800px;
+    }
+
     @font-face {
       src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff") format("woff");
       font-family: "GmarketSansBold";
@@ -30,7 +49,7 @@
       margin: 0;
       padding: 0;
       /* background-color: black; */
-      overflow-x: hidden;
+      /* overflow-x: hidden; */
     }
 
     /* header 시작 */
@@ -730,118 +749,119 @@
 <!-- <button><a href="#" id="login">Sign in</a></button>
         <button><a href="#" id="sign_up">Sign up</a></button> -->
 <!-- </header> -->
-<section class="no_height">
-  <div id="page1">
-    <div id="gif1_div"><img id="gif1" src="{% static 'images/ezgif.com-gif-maker2.gif' %}" id="page1gif"></img></div>
-    <div id="circle_blue"></div>
-    <div id="circle_darkblue"></div>
-    <div id="circle_yellow"></div>
-    <div id="circle_gray"></div>
-    <!-- <div id="rectangle"></div> -->
-    <div id="title1"><p>당신의 달콤한<br>즐거움</p></div>
-    <!-- <div id="content1"><p>롯데제과가 함께 합니다.</p></div> -->
-    <!-- <button><a href="#target1" class="scroll">View Details</a></button>
-    <button><a href="{% url 'login' %}" id="join">Login</a></button> -->
-
-
-    <!-- <div id="likelion">
-        <img src="{% static 'images/BI_1.png' %}" width="50px" id="BI_1">
-        &nbsp<div id="with">Log in with</div>&nbsp&nbsp
-        <img src="{% static 'images/letter.png' %}" width="140px" id="BI_2">
-    </div> -->
-    <!-- <input class="subbtn" type="button" value="Log In with Email"> -->
-    <button id="login1">로그인하기</button>
-
-
-    <div id="card" style="display: none;">
-      <div id="innercard">
-
-        <form method="POST" action="{% url 'login' %}">
-
-            {% csrf_token %}
-            <div id="address">ID<br>
-                <input name="userID" type="text" id="addr" placeholder="Email Address">
-            </div>
-            <br>
-            <div id="password">Password<br>
-                <input name="password" type="password" id="pswd" placeholder="Password">
-            </div>
-            <br>
-            <div id="submit">
-                <input type="submit" class="subbtn" value="Log In">
-            </div>
-            
-        </form><br><br>
-      </div>
-      
-        <div id="line">
-          <div id="hzline"></div>
-          <div id="su_qustion">
-            <div id="question1">계정이 없으신가요? </div>
-            <a href="#scroll" class="scroll" id="anch1">회원가입</a>
-          </div>
-        </div>
-
-    </div>
-
-
-
-</div>
-
-<div id="page2">
-  <div id="gif2_div"><img id="gif2" src="{% static 'images/ezgif.com-gif-maker (1).gif' %}"></img></div>
-  <div id="rectangle_yellow"></div>
-  <div id="scroll"></div>
-  <div id="target1"  align="right"><p>롯데제과와<br>함께 해요</p></div>
-  <!-- <div id="content2" align="right"><p>당신은 어떤 사람인가요?<br></p></div> -->
-</div>
+  <section id="page_wrap">
+    <div id="page1">
+      <div id="gif1_div"><img id="gif1" src="{% static 'images/ezgif.com-gif-maker2.gif' %}" id="page1gif"></img></div>
+      <div id="circle_blue"></div>
+      <div id="circle_darkblue"></div>
+      <div id="circle_yellow"></div>
+      <div id="circle_gray"></div>
+      <!-- <div id="rectangle"></div> -->
+      <div id="title1"><p>당신의 달콤한<br>즐거움</p></div>
+      <!-- <div id="content1"><p>롯데제과가 함께 합니다.</p></div> -->
+      <!-- <button><a href="#target1" class="scroll">View Details</a></button>
+      <button><a href="{% url 'login' %}" id="join">Login</a></button> -->
   
-<div id="page3">
-
-  <div id="pbar">
-
-    <div id=ycircle1></div>
-    <div id="wcircle1"></div>
-    <div id="line1"></div>
-    <div id="bcircle1"></div>
-    <div id="line2"></div>
-    <div id="bcircle2"></div>
-    <div id="text1">정보 기입</div>
-    <!-- <div id="text2">Kitchen basics</div> -->
-    <div id="text3">회원가입 완료</div>
-
-  </div>
-  <div id="contents"></div>
-
-    <div id="hello">
-
-      <div id="inhello">
-          
-          <!-- Hello, Friend! -->
-
-          <form method="POST" action="{% url 'signup' %}">
+  
+      <!-- <div id="likelion">
+          <img src="{% static 'images/BI_1.png' %}" width="50px" id="BI_1">
+          &nbsp<div id="with">Log in with</div>&nbsp&nbsp
+          <img src="{% static 'images/letter.png' %}" width="140px" id="BI_2">
+      </div> -->
+      <!-- <input class="subbtn" type="button" value="Log In with Email"> -->
+      <button id="login1">로그인하기</button>
+  
+  
+      <div id="card" style="display: none;">
+        <div id="innercard">
+  
+          <form method="POST" action="{% url 'login' %}">
+  
               {% csrf_token %}
-              <div id="email">
-                  <div id="intext">ID</div><br>
-                  <input  name="ebox" type="text" placeholder="Email Address" size="">
+              <div id="address">ID<br>
+                  <input name="userID" type="text" id="addr" placeholder="Email Address">
               </div>
-              <div id="pw">
-                  <div id="intext">Password</div><br>
-                  <input name="pwbox1" type="password" placeholder="Password">
+              <br>
+              <div id="password">Password<br>
+                  <input name="password" type="password" id="pswd" placeholder="Password">
               </div>
-              <div id="pwconf">
-                  <div id="intext">Password Confirm</div><br>
-                  <input id="pwconfbox" name="password2" type="password" placeholder="Password Confirm">
+              <br>
+              <div id="submit">
+                  <input type="submit" class="subbtn" value="Log In">
               </div>
-              <input id="signupbtn" class="subbtn" type="submit" value="Sign Up">
-          </form>
-
+              
+          </form><br><br>
+        </div>
+        
+          <div id="line">
+            <div id="hzline"></div>
+            <div id="su_qustion">
+              <div id="question1">계정이 없으신가요? </div>
+              <a href="#scroll" class="scroll" id="anch1">회원가입</a>
+            </div>
+          </div>
+  
       </div>
-
+  
+  
+  
+  </div>
+  
+  <div id="page2">
+    <div id="gif2_div"><img id="gif2" src="{% static 'images/ezgif.com-gif-maker (1).gif' %}"></img></div>
+    <div id="rectangle_yellow"></div>
+    <div id="scroll"></div>
+    <div id="target1"  align="right"><p>롯데제과와<br>함께 해요</p></div>
+    <!-- <div id="content2" align="right"><p>당신은 어떤 사람인가요?<br></p></div> -->
+  </div>
+    
+  <div id="page3">
+  
+    <div id="pbar">
+  
+      <div id=ycircle1></div>
+      <div id="wcircle1"></div>
+      <div id="line1"></div>
+      <div id="bcircle1"></div>
+      <div id="line2"></div>
+      <div id="bcircle2"></div>
+      <div id="text1">정보 기입</div>
+      <!-- <div id="text2">Kitchen basics</div> -->
+      <div id="text3">회원가입 완료</div>
+  
     </div>
-
-</div>
+    <div id="contents"></div>
+  
+      <div id="hello">
+  
+        <div id="inhello">
+            
+            <!-- Hello, Friend! -->
+  
+            <form method="POST" action="{% url 'signup' %}">
+                {% csrf_token %}
+                <div id="email">
+                    <div id="intext">ID</div><br>
+                    <input  name="ebox" type="text" placeholder="Email Address" size="">
+                </div>
+                <div id="pw">
+                    <div id="intext">Password</div><br>
+                    <input name="pwbox1" type="password" placeholder="Password">
+                </div>
+                <div id="pwconf">
+                    <div id="intext">Password Confirm</div><br>
+                    <input id="pwconfbox" name="password2" type="password" placeholder="Password Confirm">
+                </div>
+                <input id="signupbtn" class="subbtn" type="submit" value="Sign Up">
+            </form>
+  
+        </div>
+  
+      </div>
+  
+  </div>
 </section>
+
 <script>
   $(document).ready(function () {
     $("#login1").click(function () {
