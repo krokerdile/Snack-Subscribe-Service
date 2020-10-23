@@ -34,6 +34,16 @@
     vertical-align: top;
     margin-top: 4rem;
     margin-bottom: 4rem;
+    align-items: center;
+    justify-content: center;
+    
+    
+  }
+
+  .questionbox {
+   display:flex;
+   align-items: center;
+   justify-content: center;
   }
 
   .question h1 {
@@ -130,27 +140,32 @@
     </div>
     <form action="{% url 'result' %}" enctype="multipart/form-data" method="POST" onsubmit="return blank_check()">
       {% csrf_token %}
-      <div class="question" id="question1">
+      <div class="question" id="question1" >
         <h1>1. 누구와 함께 먹을건가요?</h1>
-        <div class="image">
-          <input type="radio" name="group1" id="r_group1_circle01" onclick="radio_group1();" value="가족"/><label
-            for="r_group1_circle01">
-            <img id="family" src="{% static 'main/image/family.png' %} ">
-          </label>
+        <div class="questionbox">
+          <div class="image">
+            <input type="radio" name="group1" id="r_group1_circle01" onclick="radio_group1();" value="가족"/><label
+              for="r_group1_circle01">
+              <img id="family" src="{% static 'main/image/family.png' %} ">
+            </label>
+            <h5>Family</h5>
+          </div>
+          <div class="image">
+            <input type="radio" name="group1" id="r_group1_circle02" onclick="radio_group1();" value="혼자"/><label
+              for="r_group1_circle02">
+              <img id="woman" src="{% static 'main/image/woman.png' %}">
+            </label>
+            <h5>Alone</h5>
+          </div>
+          <div class="image">
+            <input type="radio" name="group1" id="r_group1_circle03" onclick="radio_group1();" value="친구"/><label
+              for="r_group1_circle03">
+              <img id="friend" src="{% static 'main/image/friend.png' %}">
+            </label>
+            <h5>Friend</h5>
+          </div>
         </div>
-        <div class="image">
-          <input type="radio" name="group1" id="r_group1_circle02" onclick="radio_group1();" value="혼자"/><label
-            for="r_group1_circle02">
-            <img id="woman" src="{% static 'main/image/woman.png' %}">
-          </label>
-
-        </div>
-        <div class="image">
-          <input type="radio" name="group1" id="r_group1_circle03" onclick="radio_group1();" value="친구"/><label
-            for="r_group1_circle03">
-            <img id="friend" src="{% static 'main/image/friend.png' %}">
-          </label>
-        </div>
+        
         <hr>
       </div>
 
@@ -243,36 +258,42 @@
           style=" displaly:flex; flex-wrap:no-wrap; flex-direction: row; width: 100%; min-width: 500px; ">
           <div class="row" style="justify-content: center;">
             <div class=items style="text-align: center; margin-top:1rem;">
+              <div class="questionbox">
               <div class="image">
                 <input type="radio" name="group5" id="r_group5_circle01" onclick="radio_group5();" value="간식"/><label
                   for="r_group5_circle01">
                   <img id="snack" src="{% static 'main/image/snack.png' %}">
                 </label>
+                <h5>간식</h5>
               </div>
               <div class="image">
                 <input type="radio" name="group5" id="r_group5_circle02" onclick="radio_group5();" value="식사" /><label
                   for="r_group5_circle02">
                   <img id="bagel" src="{% static 'main/image/bagel.png' %}">
                 </label>
+                <h5>식사대용</h5>
               </div>
               <div class="image">
                 <input type="radio" name="group5" id="r_group5_circle03" onclick="radio_group5();" value="안주"/><label
                   for="r_group5_circle03">
                   <img id="beer" src="{% static 'main/image/beer.png' %}">
                 </label>
+                <h5>안주거리</h5>
               </div>
               <div class="image">
                 <input type="radio" name="group5" id="r_group5_circle04" onclick="radio_group5();" value="심심"/><label
                   for="r_group5_circle04">
                   <img id="mouth" src="{% static 'main/image/mouth.png' %}">
+                  <h5>입이심심할때</h5>
                 </label>
               </div>
+            </div>
             </div>
           </div>
         </div>
         <hr>
       </div>
-      <div class="container" style="text-align: center;">
+      <div class="container" style="text-align: center; margin-bottom: 4rem;">
         <a href="{% url 'result' %}"><button style="text-align: center;
           width: 120px;
           height: 45px; 
