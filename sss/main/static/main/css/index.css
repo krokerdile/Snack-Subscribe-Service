@@ -33,6 +33,13 @@
   font-style: normal;
 }
 
+@font-face {
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff") format("woff");
+  font-family: "GmarketSansBold";
+  font-weight: normal;
+  font-style: normal;
+}
+
 header {
     position: relative;
     background-color: black;
@@ -102,7 +109,7 @@ header {
     h6 {
       /* font-family: Catamaran;
       font-weight: 800; */
-      font-family: "SDGothic" !important;
+      font-family: "GmarketSansBold";
       font-weight: Bolder;
       font-style: normal;
     }
