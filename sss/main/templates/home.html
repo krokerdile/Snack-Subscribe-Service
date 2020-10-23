@@ -17,32 +17,45 @@
       <div class="w-100 text-white">
         <h1 class="display-3">Lotte제과</h1>
         <p class="lead mb-0">Monthly Snack Service</p>
-        <a href="#subscribe" class="btn btn-primary btn-xl mt-5" style="background-color: transparent;
-                border-color: #ffffff;
-                border-width: 3px;
-                margin-left: 25px;
-                margin-right: 25px;
-                width: 20%;
-                ">구독하기</a>
+        <div class="buttons" style="margin-top: 10%;">
+          <a href="#subscribe" class="btn btn-primary btn-xl mt-5"
+          style="background-color: transparent;
+          border-color: #ffffff;
+          border-width: 2px;
+          margin-left: 20px;
+          margin-right: 20px;
+          width: 17%;
+          padding: 20px;">구독하기</a>
+          <!-- <a href="#subscribe" class="btn-rectangular">구독하기</a> -->
+          <!-- <a href="{% url 'subscribe' %}"">link</a> -->
+          <a href="https://smartstore.naver.com/dithings07" class="btn btn-primary btn-xl mt-5"
+          style="background-color: transparent;
+          border-color: #ffffff;
+          border-width: 2px;
+          margin-left: 20px;
+          margin-right: 20px;
+          width: 17%;
+          padding: 12px;
+          font-size: 21px;">쇼핑하기</a>
+          <a href="{% url 'recommend' %}" class="btn btn-primary btn-xl mt-5"
+          style="background-color: transparent;
+          border-color: #ffffff;
+          border-width: 2px;
+          margin-left: 20px;
+          margin-right: 20px;
+          width: 17%;
+          padding: 20px;">과자추천</a>
+          <a href="{% url 'result' %}" class="btn btn-primary btn-xl mt-5"
+          style="background-color: transparent;
+          border-color: #ffffff;
+          border-width: 2px;
+          margin-left: 20px;
+          margin-right: 20px;
+          width: 17%;
+          padding: 20px;">결과페이지</a>
+        </div>
+    </div>
 
-        <a href="https://smartstore.naver.com/dithings07" class="btn btn-primary btn-xl mt-5" style="background-color: transparent;
-                border-color: #ffffff;
-                border-width: 3px;
-                margin-left: 25px;
-                margin-right: 25px;
-                width: 20%;">쇼핑하기</a>
-        <a href="{% url 'recommend' %}" class="btn btn-primary btn-xl mt-5" style="background-color: transparent;
-                border-color: #ffffff;
-                border-width: 3px;
-                margin-left: 25px;
-                margin-right: 25px;
-                width: 20%;">과자추천</a>
-        <a href="{% url 'result' %}" class="btn btn-primary btn-xl mt-5" style="background-color: transparent;
-                border-color: #ffffff;
-                border-width: 3px;
-                margin-left: 25px;
-                margin-right: 25px;
-                width: 20%;">결과페이지</a>
       </div>
     </div>
   </div>
