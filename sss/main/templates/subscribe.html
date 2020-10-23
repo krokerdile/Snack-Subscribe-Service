@@ -5,7 +5,12 @@
 
 {% block content %}
 <style>
-  
+  @font-face {
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff") format("woff");
+    font-family: "GmarketSansBold";
+    font-weight: normal;
+    font-style: normal;
+  }
   .selectpack {
     display: flex;
     justify-content: center;
@@ -36,8 +41,8 @@
 <div class="wrap">
   <section>
     <div class="container">
-      <h2 class="display-4">원하는 패키지를 선택해주세요 </h2>
-      <h4>매달 당신의 문앞에서 만나요</h4>
+      <h2 class="display-4" style="font-family:'GmarketSansBold';text-align: center;">원하는 패키지를 선택해주세요 </h2>
+      <h4 style="font-family:'GmarketSansBold';text-align: center;">매달 당신의 문앞에서 만나요</h4>
       <div class="container">
         <div class="selectpack">
           <img onclick="clickimage1()" src="{% static 'main/img/maniapackorigin.png' %}" alt=""
@@ -62,22 +67,25 @@
         {% if request.user.is_authenticated %}
         <div class="buttonspace">
           <a href="{% url 'payment' %}"><button style="text-align: center;
-            width: 120px;
-            height: 42px; 
+            width: 140px;
+            height: 48px; 
             background: #DA291C;
             border-radius: 8px;
             border-width: 0px;
+           
             color: white">구독하기</button></a>
         </div>
         {% endif %}
         {% if not request.user.is_authenticated %}
         <div class="buttonspace">
           <a href="{% url 'login' %}"><button onclick="alert('로그인이 필요한 서비스 입니다.');" style="text-align: center;
-            width: 120px;
-            height: 42px; 
+            width: 140px;
+            height: 48px; 
             background: #DA291C;
             border-radius: 8px;
             border-width: 0px;
+            font-family:'GmarketSansBold';
+            
             color: white">구독하기</button></a>
         </div>
         
@@ -87,9 +95,9 @@
 
   <section>
     <div class="container">
-        <h2 class="display-4">월간 과자 구독시, 주어지는 할인혜택</h2>
+        <h2 class="display-4" style="font-family:'GmarketSansBold';text-align: center;">월간 과자 구독시, 주어지는 할인혜택</h2>
         <img class="test" src="{% static 'main/image/subscribe_detail.svg' %}" alt=""
-          style="width: 1100px; height: 700px; z-index: 3; ">
+          style="width: 1100px; height: 600px; z-index: 3; ">
     </div>
   </section>
 </div>
