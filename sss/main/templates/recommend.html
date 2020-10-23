@@ -3,14 +3,12 @@
 {% block head %}
 
 <style>
-
-@font-face {
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff")
-    format("woff");
-  font-family: "GmarketSansBold";
-  font-weight: normal;
-  font-style: normal;
-}
+  @font-face {
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff") format("woff");
+    font-family: "GmarketSansBold";
+    font-weight: normal;
+    font-style: normal;
+  }
 
   .quiz {
     font-family: "GmarketSansBold";
@@ -36,19 +34,19 @@
     margin-bottom: 4rem;
     align-items: center;
     justify-content: center;
-    
-    
+
+
   }
 
   .questionbox {
-   display:flex;
-   align-items: center;
-   justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .question h1 {
     font-family: "GmarketSansBold";
-    color:#696F72;
+    color: #696F72;
     font-size: 24px;
     margin-top: 2rem;
     margin-bottom: 2rem;
@@ -110,7 +108,7 @@
 
   .image {
     display: inline;
-    margin: 3rem;
+    margin: 2rem;
   }
 
   input[type=radio] {
@@ -136,36 +134,35 @@
 <div class="wrap">
   <div class="container">
     <div class="quiz">
-      <h1 >롯데과자 추천 서비스 Quiz</h1>
+      <h1>롯데과자 추천 서비스 Quiz</h1>
     </div>
     <form action="{% url 'result' %}" enctype="multipart/form-data" method="POST" onsubmit="return blank_check()">
       {% csrf_token %}
-      <div class="question" id="question1" >
+      <div class="question" id="question1">
         <h1>1. 누구와 함께 먹을건가요?</h1>
         <div class="questionbox">
           <div class="image">
-            <input type="radio" name="group1" id="r_group1_circle01" onclick="radio_group1();" value="가족"/><label
+            <input type="radio" name="group1" id="r_group1_circle01" onclick="radio_group1();" value="가족" /><label
               for="r_group1_circle01">
               <img id="family" src="{% static 'main/image/family.png' %} ">
             </label>
             <h5>가족</h5>
           </div>
           <div class="image">
-            <input type="radio" name="group1" id="r_group1_circle02" onclick="radio_group1();" value="혼자"/><label
+            <input type="radio" name="group1" id="r_group1_circle02" onclick="radio_group1();" value="혼자" /><label
               for="r_group1_circle02">
               <img id="woman" src="{% static 'main/image/woman.png' %}">
             </label>
             <h5>혼자</h5>
           </div>
           <div class="image">
-            <input type="radio" name="group1" id="r_group1_circle03" onclick="radio_group1();" value="친구"/><label
+            <input type="radio" name="group1" id="r_group1_circle03" onclick="radio_group1();" value="친구" /><label
               for="r_group1_circle03">
               <img id="friend" src="{% static 'main/image/friend.png' %}">
             </label>
             <h5>친구</h5>
           </div>
         </div>
-        
         <hr>
       </div>
 
@@ -176,19 +173,19 @@
           style=" displaly:flex; flex-wrap:no-wrap; flex-direction: row; width: 100%; min-width: 500px; ">
           <div class="row" style="justify-content: center;">
             <div class=items style="text-align: center; margin-top:1rem;">
-              <input type="radio" name="group2" id="r_group2_circle01" onclick="radio_group2();" value="폭신"/><label
+              <input type="radio" name="group2" id="r_group2_circle01" onclick="radio_group2();" value="폭신" /><label
                 for="r_group2_circle01">
                 <div class="circle" id="circle1">폭신폭신</div>
               </label>
-              <input type="radio" name="group2" id="r_group2_circle02" onclick="radio_group2();" value="바삭"/><label
+              <input type="radio" name="group2" id="r_group2_circle02" onclick="radio_group2();" value="바삭" /><label
                 for="r_group2_circle02">
                 <div class="circle" id="circle2">바삭바삭</div>
               </label>
-              <input type="radio" name="group2" id="r_group2_circle03" onclick="radio_group2();" value="쫀득"/><label
+              <input type="radio" name="group2" id="r_group2_circle03" onclick="radio_group2();" value="쫀득" /><label
                 for="r_group2_circle03">
                 <div class="circle" id="circle3">쫀득쫀득</div>
               </label>
-              <input type="radio" name="group2" id="r_group2_circle04" onclick="radio_group2();" value="와작"/><label
+              <input type="radio" name="group2" id="r_group2_circle04" onclick="radio_group2();" value="와작" /><label
                 for="r_group2_circle04">
                 <div class="circle" id="circle4">와작와작</div>
               </label>
@@ -204,19 +201,19 @@
           style=" displaly:flex; flex-wrap:no-wrap; flex-direction: row; width: 100%; min-width: 500px; ">
           <div class="row" style="justify-content: center;">
             <div class=items style="text-align: center; margin-top:1rem;">
-              <input type="radio" name="group3" id="r_group3_circle01" onclick="radio_group3();" value="달콤"/><label
+              <input type="radio" name="group3" id="r_group3_circle01" onclick="radio_group3();" value="달콤" /><label
                 for="r_group3_circle01">
                 <div class="circle" id="circle5">달콤한</div>
               </label>
-              <input type="radio" name="group3" id="r_group3_circle02" onclick="radio_group3();" value="매콤"/><label
+              <input type="radio" name="group3" id="r_group3_circle02" onclick="radio_group3();" value="매콤" /><label
                 for="r_group3_circle02">
                 <div class="circle" id="circle6">매콤한</div>
               </label>
-              <input type="radio" name="group3" id="r_group3_circle03" onclick="radio_group3();" value="짭짤"/><label
+              <input type="radio" name="group3" id="r_group3_circle03" onclick="radio_group3();" value="짭짤" /><label
                 for="r_group3_circle03">
                 <div class="circle" id="circle7">짭짤한</div>
               </label>
-              <input type="radio" name="group3" id="r_group3_circle04" onclick="radio_group3();" value="고소"/><label
+              <input type="radio" name="group3" id="r_group3_circle04" onclick="radio_group3();" value="고소" /><label
                 for="r_group3_circle04">
                 <div class="circle" id="circle8">고소한</div>
               </label>
@@ -227,24 +224,24 @@
       </div>
 
       <div class="question" id="question4">
-        <h1>4. 밥 먹을 때 어떻게 먹나요?
-          같이 나눠먹기 / 따로 각자 접시에
-        </h1>
+        <h1>4. 밥 먹을 때 어떻게 먹나요?</h1>
         <div class="items-container"
-          style=" displaly:flex; flex-wrap:no-wrap; flex-direction: row; width: 100%; min-width: 500px; ">
-          <div class="row" style="justify-content: center;">
-            <div class=items style="text-align: center; margin-top:1rem;">
+          style="displaly:flex; flex-wrap:no-wrap; flex-direction: row; width: 100%; min-width: 500px; ">
+          <div class=items style="text-align: center; margin-top:1rem;">
+            <div class="questionbox">
               <div class="image">
-                <input type="radio" name="group4" id="r_group4_circle01" onclick="radio_group4();" value="한번에"/><label
+                <input type="radio" name="group4" id="r_group4_circle01" onclick="radio_group4();" value="한번에" /><label
                   for="r_group4_circle01">
                   <img id="meal_plate" src="{% static 'main/image/meal_plate.png' %}">
                 </label>
+                <h5>한번에</h5>
               </div>
               <div class="image">
-                <input type="radio" name="group4" id="r_group4_circle02" onclick="radio_group4();" value="나눠서"/><label
+                <input type="radio" name="group4" id="r_group4_circle02" onclick="radio_group4();" value="나눠서" /><label
                   for="r_group4_circle02">
                   <img id="meal_plate_2" src="{% static 'main/image/meal_plate_2.png' %}">
                 </label>
+                <h5>혼자</h5>
               </div>
             </div>
           </div>
@@ -259,35 +256,35 @@
           <div class="row" style="justify-content: center;">
             <div class=items style="text-align: center; margin-top:1rem;">
               <div class="questionbox">
-              <div class="image">
-                <input type="radio" name="group5" id="r_group5_circle01" onclick="radio_group5();" value="간식"/><label
-                  for="r_group5_circle01">
-                  <img id="snack" src="{% static 'main/image/snack.png' %}">
-                </label>
-                <h5>간식</h5>
+                <div class="image">
+                  <input type="radio" name="group5" id="r_group5_circle01" onclick="radio_group5();" value="간식" /><label
+                    for="r_group5_circle01">
+                    <img id="snack" src="{% static 'main/image/snack.png' %}">
+                  </label>
+                  <h5>간식</h5>
+                </div>
+                <div class="image">
+                  <input type="radio" name="group5" id="r_group5_circle02" onclick="radio_group5();" value="식사" /><label
+                    for="r_group5_circle02">
+                    <img id="bagel" src="{% static 'main/image/bagel.png' %}">
+                  </label>
+                  <h5>식사대용</h5>
+                </div>
+                <div class="image">
+                  <input type="radio" name="group5" id="r_group5_circle03" onclick="radio_group5();" value="안주" /><label
+                    for="r_group5_circle03">
+                    <img id="beer" src="{% static 'main/image/beer.png' %}">
+                  </label>
+                  <h5>안주거리</h5>
+                </div>
+                <div class="image">
+                  <input type="radio" name="group5" id="r_group5_circle04" onclick="radio_group5();" value="심심" /><label
+                    for="r_group5_circle04">
+                    <img id="mouth" src="{% static 'main/image/mouth.png' %}">
+                    <h5>입이심심할때</h5>
+                  </label>
+                </div>
               </div>
-              <div class="image">
-                <input type="radio" name="group5" id="r_group5_circle02" onclick="radio_group5();" value="식사" /><label
-                  for="r_group5_circle02">
-                  <img id="bagel" src="{% static 'main/image/bagel.png' %}">
-                </label>
-                <h5>식사대용</h5>
-              </div>
-              <div class="image">
-                <input type="radio" name="group5" id="r_group5_circle03" onclick="radio_group5();" value="안주"/><label
-                  for="r_group5_circle03">
-                  <img id="beer" src="{% static 'main/image/beer.png' %}">
-                </label>
-                <h5>안주거리</h5>
-              </div>
-              <div class="image">
-                <input type="radio" name="group5" id="r_group5_circle04" onclick="radio_group5();" value="심심"/><label
-                  for="r_group5_circle04">
-                  <img id="mouth" src="{% static 'main/image/mouth.png' %}">
-                  <h5>입이심심할때</h5>
-                </label>
-              </div>
-            </div>
             </div>
           </div>
         </div>
@@ -303,9 +300,8 @@
           text-align: center;
           font-family: 'GmarketSansBold';
           color: white">분석하기</button></a>
-        </div>
+      </div>
     </form>
-
   </div>
 </div>
 
@@ -490,54 +486,47 @@
       mouth.src = "{% static 'main/image/mouth.png' %}";
     }
   }
-  function blank_check()
-  {
+  function blank_check() {
     var group1 = document.getElementsByName("group1");
-    var group2 = document.getElementsByName("group2"); 
-    var group3 = document.getElementsByName("group3"); 
-    var group4 = document.getElementsByName("group4"); 
-    var group5 = document.getElementsByName("group5"); 
+    var group2 = document.getElementsByName("group2");
+    var group3 = document.getElementsByName("group3");
+    var group4 = document.getElementsByName("group4");
+    var group5 = document.getElementsByName("group5");
     var chk1 = false;
     var chk2 = false;
     var chk3 = false;
     var chk4 = false;
     var chk5 = false;
-    for(var i=0; i<group1.length;i++)
-    {
-      if(group1[i].checked){
-        chk1= true;
+    for (var i = 0; i < group1.length; i++) {
+      if (group1[i].checked) {
+        chk1 = true;
       }
     }
-    for(var i=0; i<group2.length;i++)
-    {
-      if(group2[i].checked){
-        chk2= true;
+    for (var i = 0; i < group2.length; i++) {
+      if (group2[i].checked) {
+        chk2 = true;
       }
     }
-    for(var i=0; i<group3.length;i++)
-    {
-      if(group3[i].checked){
-        chk3= true;
+    for (var i = 0; i < group3.length; i++) {
+      if (group3[i].checked) {
+        chk3 = true;
       }
     }
-    for(var i=0; i<group4.length;i++)
-    {
-      if(group4[i].checked){
-        chk4= true;
+    for (var i = 0; i < group4.length; i++) {
+      if (group4[i].checked) {
+        chk4 = true;
       }
     }
-    for(var i=0; i<group5.length;i++)
-    {
-      if(group5[i].checked){
-        chk5= true;
+    for (var i = 0; i < group5.length; i++) {
+      if (group5[i].checked) {
+        chk5 = true;
       }
     }
 
-    if(chk1 && chk2 && chk3 && chk4 && chk5)
-    {
+    if (chk1 && chk2 && chk3 && chk4 && chk5) {
       return true;
     }
-    else{
+    else {
       alert("빈칸을 채워주세요!");
       return false;
     }
