@@ -115,7 +115,7 @@ header {
     }
     
     .display-4 {
-      font-family: "SDGothic" !important;
+      /* font-family: "SDGothic" !important; */
       font-weight: Bolder;
       font-style: normal;
     }

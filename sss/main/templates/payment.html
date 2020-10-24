@@ -4,6 +4,14 @@
 
 <link href="{% static 'main/css/index.css' %}" rel="stylesheet">
 <link href="{% static 'main/css/payment.css' %}" rel="stylesheet">
+<style>
+    @font-face {
+      src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff") format("woff");
+      font-family: "GmarketSansBold";
+      font-weight: normal;
+      font-style: normal;
+    }
+</style>
 {% endblock %}
 
 <!-- base.html 시작부 -->
@@ -20,7 +28,7 @@
             <!-- <div class="col-lg-6 order-lg-1"> -->
               <div class="p-4">
                   <br>
-                <h2 class="display-4">결제 정보를 입력하여 주세요</h2>
+                <h2 class="display-4" style="font-family: 'GmarketSansBold';">결제 정보를 입력하여 주세요</h2>
                 <br><br><br>
                 <form class="pay_form">
                     <div class="form-row">
@@ -81,7 +89,7 @@
                     <div class="form-row">
                         <img id="sn_sub" src="{% static 'main/img/snack_subscribe.png' %}">
                     </div>
-                    <a href="{% url 'home' %}" type="submit" class="btn btn-danger" onclick="alert('결제완료 되었습니다.');" >구독 서비스 결제</a>
+                    <a href="{% url 'home' %}" style="font-family: 'GmarketSansBold';" type="submit" class="btn btn-danger" onclick="alert('결제완료 되었습니다.');" >구독 서비스 결제</a>
                 </form>
               </div>
             <!-- </div> -->
