@@ -21,7 +21,9 @@ pip install -r requirements.txt
 cd sss
 
 python manage.py makemigrations
+
 python manage.py migrates
+
 python manage.py collectstatic
 
 ### Compiles and hot-reloads for development
